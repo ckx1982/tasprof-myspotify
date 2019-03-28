@@ -7,7 +7,7 @@
         android:id="@+id/gridLayoutPlayHistoryItem"
 		android:background="@android:color/black"
 		android:paddingVertical="10dp"
-		android:paddingHorizontal="10"
+		android:paddingHorizontal="10dp"
 		android:columnCount="2"
         android:rowCount="2">
 	
