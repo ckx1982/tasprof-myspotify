@@ -1,32 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<GridLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:local="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+	android:rowCount="3">
     <Button
+		android:background="@android:color/holo_green_light"
+		android:layout_rowWeight="3"
+		android:layout_margin="10dp"
         android:layout_width="match_parent"
-        android:layout_margin="50dp"
         android:layout_height="wrap_content"
         android:id="@+id/buttonTopArtistsAndTracks"
         local:MvxBind="Click NavigateCommand"
         android:text="Top Artists and Tracks" />
-    
-    
      <Button
+		android:background="@android:color/holo_green_light"
+		android:layout_rowWeight="3"
+		android:layout_margin="10dp"
         android:layout_width="match_parent"
-        android:layout_margin="50dp"
         android:layout_height="wrap_content"
         android:id="@+id/buttonPlaylists"
         local:MvxBind="Click PlaylistsCommand"
         android:text="Playlists" />
-    
       <Button
+		android:background="@android:color/holo_green_light"	
+		android:layout_rowWeight="3"
+		android:layout_margin="10dp"
         android:layout_width="match_parent"
-        android:layout_margin="50dp"
         android:layout_height="wrap_content"
         android:id="@+id/btnRecentlyPlayed"
         local:MvxBind="Click RecentlyPlayedCommand"
-        android:text="Playlists" />
-</LinearLayout>
+        android:text="Recently Played" />
+</GridLayout>

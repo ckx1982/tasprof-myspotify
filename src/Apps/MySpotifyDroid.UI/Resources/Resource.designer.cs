@@ -6668,14 +6668,14 @@ namespace Tasprof.Apps.MySpotifyDroid.UI
 			// aapt resource value: 0x7f09000a
 			public const int ghost_view = 2131296266;
 			
-			// aapt resource value: 0x7f0900be
-			public const int gridLayout1 = 2131296446;
+			// aapt resource value: 0x7f0900c0
+			public const int gridLayout1 = 2131296448;
 			
 			// aapt resource value: 0x7f0900b7
 			public const int gridLayoutPlayHistoryItem = 2131296439;
 			
-			// aapt resource value: 0x7f0900bb
-			public const int gridLayoutPlaylist = 2131296443;
+			// aapt resource value: 0x7f0900bd
+			public const int gridLayoutPlaylist = 2131296445;
 			
 			// aapt resource value: 0x7f090005
 			public const int home = 2131296261;
@@ -6722,14 +6722,14 @@ namespace Tasprof.Apps.MySpotifyDroid.UI
 			// aapt resource value: 0x7f090063
 			public const int list_item = 2131296355;
 			
-			// aapt resource value: 0x7f0900c3
-			public const int masked = 2131296451;
+			// aapt resource value: 0x7f0900c6
+			public const int masked = 2131296454;
 			
 			// aapt resource value: 0x7f0900a9
 			public const int media_actions = 2131296425;
 			
-			// aapt resource value: 0x7f0900c1
-			public const int message = 2131296449;
+			// aapt resource value: 0x7f0900c4
+			public const int message = 2131296452;
 			
 			// aapt resource value: 0x7f090033
 			public const int middle = 2131296307;
@@ -6740,8 +6740,8 @@ namespace Tasprof.Apps.MySpotifyDroid.UI
 			// aapt resource value: 0x7f09002a
 			public const int multiply = 2131296298;
 			
-			// aapt resource value: 0x7f0900bc
-			public const int mvxCachedImagePlaylist = 2131296444;
+			// aapt resource value: 0x7f0900be
+			public const int mvxCachedImagePlaylist = 2131296446;
 			
 			// aapt resource value: 0x7f09008e
 			public const int mvxCachedImageView1 = 2131296398;
@@ -6752,11 +6752,11 @@ namespace Tasprof.Apps.MySpotifyDroid.UI
 			// aapt resource value: 0x7f0900b6
 			public const int mvxRvPlayHistory = 2131296438;
 			
-			// aapt resource value: 0x7f0900b9
-			public const int mvxRvPlaylist = 2131296441;
+			// aapt resource value: 0x7f0900bb
+			public const int mvxRvPlaylist = 2131296443;
 			
-			// aapt resource value: 0x7f0900ba
-			public const int mvxRvPlaylists = 2131296442;
+			// aapt resource value: 0x7f0900bc
+			public const int mvxRvPlaylists = 2131296444;
 			
 			// aapt resource value: 0x7f09009a
 			public const int navigation_header_container = 2131296410;
@@ -6920,8 +6920,8 @@ namespace Tasprof.Apps.MySpotifyDroid.UI
 			// aapt resource value: 0x7f090089
 			public const int submit_area = 2131296393;
 			
-			// aapt resource value: 0x7f0900bf
-			public const int tabLayout1 = 2131296447;
+			// aapt resource value: 0x7f0900c2
+			public const int tabLayout1 = 2131296450;
 			
 			// aapt resource value: 0x7f090021
 			public const int tabMode = 2131296289;
@@ -6944,8 +6944,8 @@ namespace Tasprof.Apps.MySpotifyDroid.UI
 			// aapt resource value: 0x7f09008f
 			public const int textView1 = 2131296399;
 			
-			// aapt resource value: 0x7f0900b8
-			public const int textView2 = 2131296440;
+			// aapt resource value: 0x7f0900c1
+			public const int textView2 = 2131296449;
 			
 			// aapt resource value: 0x7f09009f
 			public const int text_input_password_toggle = 2131296415;
@@ -6992,8 +6992,17 @@ namespace Tasprof.Apps.MySpotifyDroid.UI
 			// aapt resource value: 0x7f090013
 			public const int transition_transform = 2131296275;
 			
-			// aapt resource value: 0x7f0900bd
-			public const int tvPlaylistName = 2131296445;
+			// aapt resource value: 0x7f0900b8
+			public const int tvArtist = 2131296440;
+			
+			// aapt resource value: 0x7f0900bf
+			public const int tvPlaylistName = 2131296447;
+			
+			// aapt resource value: 0x7f0900ba
+			public const int tvTime = 2131296442;
+			
+			// aapt resource value: 0x7f0900b9
+			public const int tvTitle = 2131296441;
 			
 			// aapt resource value: 0x7f09002f
 			public const int uniform = 2131296303;
@@ -7007,11 +7016,11 @@ namespace Tasprof.Apps.MySpotifyDroid.UI
 			// aapt resource value: 0x7f090016
 			public const int view_offset_helper = 2131296278;
 			
-			// aapt resource value: 0x7f0900c0
-			public const int viewpager1 = 2131296448;
+			// aapt resource value: 0x7f0900c3
+			public const int viewpager1 = 2131296451;
 			
-			// aapt resource value: 0x7f0900c2
-			public const int visible = 2131296450;
+			// aapt resource value: 0x7f0900c5
+			public const int visible = 2131296453;
 			
 			// aapt resource value: 0x7f09003e
 			public const int withText = 2131296318;

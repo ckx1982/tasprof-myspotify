@@ -1,11 +1,10 @@
-﻿using System;
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.OS;
-using Tasprof.Apps.MySpotifyDroid.ViewModels;
-using MvvmCross.Droid.Support.V7.AppCompat;
 using Com.Spotify.Sdk.Android.Authentication;
-using Java.IO;
+using MvvmCross.Droid.Support.V7.AppCompat;
+using System;
+using Tasprof.Apps.MySpotifyDroid.ViewModels;
 
 namespace Tasprof.Apps.MySpotifyDroid.UI.Views
 {
@@ -54,7 +53,10 @@ namespace Tasprof.Apps.MySpotifyDroid.UI.Views
         {
             return new AuthenticationRequest.Builder(GlobalSettings.Instance.ClientId, type, GlobalSettings.Instance.RedirectUri)
                 .SetShowDialog(true)
-                .SetScopes(new string[] { "user-read-email", "user-read-recently-played" })
+                .SetScopes(new string[] {
+                    "user-read-email",
+                    "user-read-recently-played"
+                })
                 .Build();
         }
     }
