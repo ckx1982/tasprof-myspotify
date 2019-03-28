@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+	android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop = "10dp"
+    android:rowCount="1"
+    android:columnCount="2">
+	
+    <FFImageLoading.Cross.MvxCachedImageView
+        android:layout_column="0"
+        android:id="@+id/mvxCachedImageView1"
+        android:layout_height="50dp"
+        android:layout_width="50dp"
+        android:layout_marginLeft="15dp"
+        local:MvxBind="Transformations MainImage.Transformations;
+                       DownsampleWidth MainImage.DownsampleWidth;
+                       ImagePath MainImage.Url" />
+    
+	<TextView 
+        android:layout_width="match_parent"
+        android:layout_gravity="center_vertical"
+        android:text="Eleni Foureira"
+        android:layout_column="1"
+        android:id="@+id/textView1"
+		android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+		local:MvxBind="Text Name" />
+ 
+</GridLayout>

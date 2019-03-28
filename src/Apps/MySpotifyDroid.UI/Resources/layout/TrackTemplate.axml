@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GridLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:local="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop = "10dp"
+        android:id="@+id/gridLayout1"
+        android:rowCount="2"    
+        android:columnCount="2">
+    
+    <FFImageLoading.Cross.MvxCachedImageView
+            android:layout_rowSpan="2"
+            android:layout_column="0"
+            android:id="@+id/mvxCachedImageView1"
+            android:layout_height="50dp"
+            android:layout_width="50dp"
+            android:layout_marginLeft="15dp"
+            local:MvxBind="Transformations Album.MainImage.Transformations;
+                           DownsampleWidth Album.MainImage.DownsampleWidth;
+                           ImagePath Album.MainImage.Url"/>
+    
+    
+    <TextView
+        android:layout_row="0"
+        android:gravity="center_vertical"
+        android:layout_column="1"
+        android:layout_height="25dp"
+        android:id="@+id/textView1"
+        android:text="Eleni Foureira"
+        local:MvxBind="Text MainArtist.Name"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp" />
+    
+    <TextView
+        android:layout_row="1"
+        android:gravity="center_vertical"
+        android:layout_column="1"
+        android:layout_height="25dp"
+        android:text="Tomame"
+        local:MvxBind="Text Title"
+        android:id="@+id/textView2"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp" />
+
+    
+</GridLayout>
