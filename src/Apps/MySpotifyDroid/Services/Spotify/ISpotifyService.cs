@@ -10,6 +10,6 @@ namespace Tasprof.Apps.MySpotifyDroid.Services.Spotify
         Task<List<PlaylistItem>> GetPlaylistItems(string playlistId);
         Task<List<Artist>> GetTopArtists();
         Task<List<Track>> GetTopTracks();
-        Task<PlayHistoryItems> GetRecentlyPlayedTracks(long before, int limit); 
+        Task<PlayHistoryItems> GetRecentlyPlayedTracks(long before, int limit);
     }
 }

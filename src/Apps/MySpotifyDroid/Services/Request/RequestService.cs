@@ -24,6 +24,7 @@ namespace Tasprof.Apps.MySpotifyDroid.Services.Request
             _serializerSettings.Converters.Add(new StringEnumConverter());
         }
 
+
         public async Task<TResult> GetAsync<TResult>(string uri, string token = "")
         {
             HttpClient httpClient = CreateHttpClient(token);
@@ -143,7 +144,7 @@ namespace Tasprof.Apps.MySpotifyDroid.Services.Request
             if (string.IsNullOrWhiteSpace(clientId) || string.IsNullOrWhiteSpace(clientSecret))
                 return;
 
-            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(clientId, clientSecret);
+            httpClient.DefaultRequestHeaders.Authorization = new BasicAuthenticationHeaderValue(clientId, clientSecret);
         }
 
         private async Task HandleResponse(HttpResponseMessage response)

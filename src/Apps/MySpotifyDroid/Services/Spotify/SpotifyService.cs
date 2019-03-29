@@ -51,5 +51,6 @@ namespace Tasprof.Apps.MySpotifyDroid.Services.Spotify
             var result = await _requestService.GetAsync<PlayHistoryItems>(uri, GlobalSettings.Instance.AuthToken);
             return result;
         }
+
     }
 }

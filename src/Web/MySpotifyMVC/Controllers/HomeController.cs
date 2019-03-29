@@ -5,6 +5,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MySpotifyMVC.Models;
+using Tasprof.Apps.MySpotifyDroid;
+using Tasprof.Apps.MySpotifyDroid.Services.Identity;
 using Tasprof.Apps.MySpotifyDroid.Services.Spotify;
 
 namespace MySpotifyMVC.Controllers
@@ -13,20 +15,33 @@ namespace MySpotifyMVC.Controllers
     {
 
         private readonly ISpotifyService _spotifyService;
+        private readonly IIdentityService _identityService;
 
-        public HomeController(ISpotifyService spotifyService)
+        public HomeController(ISpotifyService spotifyService, IIdentityService identityService)
         {
             _spotifyService = spotifyService;
+            _identityService = identityService;
         }
-        public async Task<IActionResult> Index()
+
+        public IActionResult Index()
         {
-            var playllists = await _spotifyService.GetPlaylists();
+            var request = _identityService.CreateAuthorizationRequest();
+           
+            return Redirect(request);
+        }
+
+        public async Task<IActionResult> Privacy()
+        {
+            var playllists = await _spotifyService.GetTopArtists();
             return View();
         }
 
-        public IActionResult Privacy()
+        public async Task<IActionResult> AuthResponse(string code)
         {
-            return View();
+            GlobalSettings.Instance.AuthCode = code;
+            var token = await _identityService.GetTokenAsync(code);
+            GlobalSettings.Instance.AuthToken = token.AccessToken;
+            return RedirectToAction("Privacy");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

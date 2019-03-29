@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Tasprof.Apps.MySpotifyDroid.Services.Identity;
 using Tasprof.Apps.MySpotifyDroid.Services.Request;
 using Tasprof.Apps.MySpotifyDroid.Services.Spotify;
 
@@ -38,6 +39,7 @@ namespace MySpotifyMVC
 
             services.AddScoped<ISpotifyService, SpotifyService>();
             services.AddScoped<IRequestService, RequestService>();
+            services.AddScoped<IIdentityService, IdentityService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
