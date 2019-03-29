@@ -6,6 +6,7 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using Tasprof.Apps.MySpotifyDroid.Exceptions;
 
 namespace Tasprof.Apps.MySpotifyDroid.Services.Request
 {
@@ -37,8 +38,6 @@ namespace Tasprof.Apps.MySpotifyDroid.Services.Request
 
             return result;
         }
-
-
 
         public async Task<TResult> PostAsync<TResult>(string uri, TResult data, string token = "", string header = "")
         {
@@ -112,6 +111,8 @@ namespace Tasprof.Apps.MySpotifyDroid.Services.Request
             await httpClient.DeleteAsync(uri);
         }
 
+        #region "Private Methods"
+
         private HttpClient CreateHttpClient(string token = "")
         {
             var httpClient = new HttpClient();
@@ -155,29 +156,15 @@ namespace Tasprof.Apps.MySpotifyDroid.Services.Request
                 if (response.StatusCode == HttpStatusCode.Forbidden ||
                     response.StatusCode == HttpStatusCode.Unauthorized)
                 {
-                    //throw new ServiceAuthenticationException(content);
+                    throw new ServiceAuthenticationException(content);
                 }
 
-                //throw new HttpRequestExceptionEx(response.StatusCode, content);
+                throw new HttpRequestExceptionEx(response.StatusCode, content);
             }
         }
+
+        #endregion  
+
     }
-    
-    //// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
-    //// Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
-    //public class BasicAuthenticationHeaderValue : AuthenticationHeaderValue
-    //{
-    //    public BasicAuthenticationHeaderValue(string userName, string password)
-    //        : base("Basic", EncodeCredential(userName, password))
-    //    { }
-
-    //    private static string EncodeCredential(string userName, string password)
-    //    {
-    //        Encoding encoding = Encoding.UTF8;
-    //        string credential = String.Format("{0}:{1}", userName, password);
-
-    //        return Convert.ToBase64String(encoding.GetBytes(credential));
-    //    }
-    //}
 }
 
