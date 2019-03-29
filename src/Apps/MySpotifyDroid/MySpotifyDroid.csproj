@@ -26,6 +26,5 @@
 
   <ItemGroup>
     <Folder Include="Navigation\" />
-    <Folder Include="Services\Spotify\" />
   </ItemGroup>
 </Project>
