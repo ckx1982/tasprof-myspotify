@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Tasprof.Apps.MySpotifyDroid.Helpers;
+﻿using Tasprof.Apps.MySpotifyDroid.Helpers;
 
 namespace Tasprof.Apps.MySpotifyDroid
 {
