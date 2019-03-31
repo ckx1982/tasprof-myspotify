@@ -12,11 +12,13 @@ namespace MySpotifyMVC.Extensions
         /// </summary>
         public SpotifyOptions()
         {
-            this.CallbackPath = new PathString("/signin-spotify");
+            //this.CallbackPath = new PathString("/signin-spotify");
+            this.CallbackPath = new PathString("/signin");
             this.AuthorizationEndpoint = SpotifyDefaults.AuthorizationEndpoint;
             this.TokenEndpoint = SpotifyDefaults.TokenEndpoint;
             this.UserInformationEndpoint = SpotifyDefaults.UserInformationEndpoint;
             this.Scope.Add(SpotifyDefaults.UserReadEmailScope);
+            this.Scope.Add(SpotifyDefaults.UserReadRecentlyPlayedScope);
 
             //ClaimActions.MapJsonKey(ClaimTypes.NameIdentifier, "id");
             //ClaimActions.MapCustomJson(ClaimTypes.Name, SpotifyHelper.GetName);

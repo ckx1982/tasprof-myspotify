@@ -16,4 +16,7 @@
     <ProjectReference Include="..\..\Apps\MySpotifyDroid\MySpotifyDroid.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Exceptions\" />
+  </ItemGroup>
 </Project>

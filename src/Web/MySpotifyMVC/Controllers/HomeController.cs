@@ -1,9 +1,14 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MySpotifyMVC.Models;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using Tasprof.Apps.MySpotifyDroid;
+using Tasprof.Apps.MySpotifyDroid.Exceptions;
 using Tasprof.Apps.MySpotifyDroid.Models;
 using Tasprof.Apps.MySpotifyDroid.Services.Spotify;
 
@@ -18,11 +23,13 @@ namespace MySpotifyMVC.Controllers
             _spotifyService = spotifyService;
         }
 
-        //[Authorize]
-        public async Task<IActionResult> Index()
+        [Authorize]
+        public async Task<IActionResult> Index(IHttpContextAccessor accessor)
         {
-            var playllists = await _spotifyService.GetPlaylists();
-            return View(playllists);
+             
+                GlobalSettings.Instance.AuthToken = await HttpContext.GetTokenAsync("access_token");
+                var playHistoryItems = await _spotifyService.GetRecentlyPlayedTracks(DateTimeOffset.UtcNow.ToUnixTimeMilliseconds(), 15);
+                return View(playHistoryItems);
         }
 
         public IActionResult Privacy()

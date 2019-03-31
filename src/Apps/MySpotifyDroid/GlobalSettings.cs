@@ -31,6 +31,7 @@ namespace Tasprof.Apps.MySpotifyDroid
             get { return _instance; }
         }
 
+        public string RefreshToken { get; set; }
         public string AuthToken { get; set; }
         public string AuthCode { get; set; }
     }

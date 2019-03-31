@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json.Linq;
-
+using Tasprof.Apps.MySpotifyDroid;
 
 namespace MySpotifyMVC.Extensions
 {
@@ -22,6 +22,7 @@ namespace MySpotifyMVC.Extensions
             : base(options, logger, encoder, clock)
         {
         }
+
 
         protected override async Task<AuthenticationTicket> CreateTicketAsync(ClaimsIdentity identity, AuthenticationProperties properties, OAuthTokenResponse tokens)
         {

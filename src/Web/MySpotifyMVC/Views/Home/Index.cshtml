@@ -1,4 +1,4 @@
-﻿@model List<Tasprof.Apps.MySpotifyDroid.Models.Playlist>
+﻿@model Tasprof.Apps.MySpotifyDroid.Models.PlayHistoryItems
 
 @{
     ViewData["Title"] = "Home Page";
@@ -7,9 +7,13 @@
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <ul>
-        @foreach (var playlist in Model)
+        @foreach (var playHistoryItem in Model.Items)
         {
-            <li><span>@playlist.Name</span></li>
+            <li>
+                <span>@playHistoryItem.Track.Title</span>
+                <span>@playHistoryItem.PlayedAt.ToString()</span>
+                @*<img src="@playlist.MainImage.Url" alt="@playlist.Name" />*@
+            </li>
         }
     </ul>
 </div>

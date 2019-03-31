@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
+using MySpotifyMVC.Exceptions;
 using System;
+using Tasprof.Apps.MySpotifyDroid.Exceptions;
 
 namespace MySpotifyMVC.Extensions
 {
@@ -27,5 +30,30 @@ namespace MySpotifyMVC.Extensions
         /// <returns></returns>
         public static AuthenticationBuilder AddSpotify(this AuthenticationBuilder builder, string authenticationScheme, string displayName, Action<SpotifyOptions> configureOptions)
             => builder.AddOAuth<SpotifyOptions, SpotifyHandler>(authenticationScheme, displayName, configureOptions);
+
+
+        /// <summary>
+        /// Handles the spotify invalid refresh token exception.
+        /// </summary>
+        /// <param name="applicationBuilder">The application builder.</param>
+        /// <param name="loginPath">The login path.</param>
+        /// <param name="authenticationScheme">The authentication scheme.</param>
+        /// <returns></returns>
+        public static IApplicationBuilder UseSpotifyInvalidRefreshTokenExceptionHandler(this IApplicationBuilder applicationBuilder, string loginPath, string authenticationScheme = null)
+        {
+            return applicationBuilder.Use(async (context, next) =>
+            {
+                try
+                {
+                    await next.Invoke();
+                }
+                catch (SpotifyInvalidRefreshTokenException)
+                {
+                    await context.SignOutAsync(authenticationScheme).ConfigureAwait(false);
+                    context.Response.Redirect(loginPath);
+                }
+
+            });
+        }
     }
 }

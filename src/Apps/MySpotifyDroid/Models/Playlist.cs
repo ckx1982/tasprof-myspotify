@@ -14,6 +14,6 @@ namespace Tasprof.Apps.MySpotifyDroid.Models
         [JsonProperty(PropertyName = "images")]
         public List<Image> Images { get; set; }
 
-        public Image MainImage => Images.OrderByDescending(x=> x.Width).FirstOrDefault();
+        public Image MainImage => Images.DefaultIfEmpty(new Image()).OrderByDescending(x=> x.Width).FirstOrDefault();
     }
 }

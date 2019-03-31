@@ -55,8 +55,8 @@ namespace MySpotifyMVC
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            //services.AddScoped<ISpotifyService, SpotifyService>();
-            services.AddScoped<ISpotifyService, SpotifyMockService>();
+            services.AddScoped<ISpotifyService, SpotifyService>();
+            //services.AddScoped<ISpotifyService, SpotifyMockService>();
             services.AddScoped<IRequestService, RequestService>();
             services.AddScoped<IIdentityService, IdentityService>();
         }
@@ -64,6 +64,8 @@ namespace MySpotifyMVC
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+
+          
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -75,9 +77,12 @@ namespace MySpotifyMVC
                 app.UseHsts();
             }
 
+            app.UseSpotifyInvalidRefreshTokenExceptionHandler("/login");
+          
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            app.UseCookiePolicy();
+            //app.UseCookiePolicy();
+            app.UseAuthentication();
 
             app.Map(
               "/login",

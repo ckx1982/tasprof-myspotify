@@ -26,5 +26,6 @@
 
   <ItemGroup>
     <Folder Include="Navigation\" />
+    <Folder Include="Services\Token\" />
   </ItemGroup>
 </Project>

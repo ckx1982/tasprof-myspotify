@@ -2,22 +2,26 @@
 using System.Threading.Tasks;
 using Tasprof.Apps.MySpotifyDroid.Models;
 using Tasprof.Apps.MySpotifyDroid.Services.Request;
+using Tasprof.Apps.MySpotifyDroid.Services.Token;
 
 namespace Tasprof.Apps.MySpotifyDroid.Services.Spotify
 {
     public class SpotifyService :ISpotifyService
     {
         private readonly IRequestService _requestService;
+        private readonly ITokenService _tokenService;
 
-        public SpotifyService(IRequestService requestService)
+        public SpotifyService(IRequestService requestService, ITokenService tokenService)
         {
-            _requestService = requestService;
+            _requestService = requestService;  
+            _tokenService = tokenService;
         }
 
         public async Task<List<Playlist>> GetPlaylists()
         {
-            var uri = $"{GlobalSettings.Instance.BaseGeneralSpotifyUri}playlists?limit=50";
-            var result = await _requestService.GetAsync<Playlists>(uri, GlobalSettings.Instance.AuthToken);
+            var uri = $"{GlobalSettings.Instance.BaseGeneralSpotifyUri}me/playlists?limit=50";
+            var token = await _tokenService.GetTokenAsync();
+            var result = await _requestService.GetAsync<Playlists>(uri, token);
             return result.Items;
         }
 
