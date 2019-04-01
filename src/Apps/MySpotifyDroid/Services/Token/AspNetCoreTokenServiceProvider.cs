@@ -28,8 +28,7 @@ namespace Tasprof.Apps.MySpotifyDroid.Services.Token
         public async Task<string> GetNewAccessTokenAsync()
         {
             var refresh_token = await _httpContextAccessor.HttpContext.GetTokenAsync("refresh_token");
-
-            var access_token = await _requestService.PostAsync(GlobalSettings.Instance.RefreshTokenUri, $"{{ 'refresh_token': '{refresh_token}'}}");
+            var access_token = await _requestService.PostAsync(GlobalSettings.Instance.TokenUri, $"{{ 'grant_type': 'refresh_token', 'refresh_token': '{refresh_token}'}}");
             GlobalSettings.Instance.AuthToken = access_token;
             return access_token;
         }

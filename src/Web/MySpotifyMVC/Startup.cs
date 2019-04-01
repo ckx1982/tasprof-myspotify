@@ -55,6 +55,7 @@ namespace MySpotifyMVC
 
             services.AddRouting(options => { options.LowercaseUrls = true; });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddHttpContextAccessor();
 
             services.AddScoped<ISpotifyService, SpotifyService>();
             //services.AddScoped<ISpotifyService, SpotifyMockService>();

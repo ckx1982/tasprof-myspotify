@@ -2,7 +2,6 @@
 using System.Threading.Tasks;
 using Tasprof.Apps.MySpotifyDroid.Models;
 using Tasprof.Apps.MySpotifyDroid.Services.Request;
-using Tasprof.Apps.MySpotifyDroid.Services.Token;
 
 namespace Tasprof.Apps.MySpotifyDroid.Services.Spotify
 {
