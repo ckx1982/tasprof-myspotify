@@ -23,7 +23,6 @@ namespace MySpotifyMVC.Extensions
         {
         }
 
-
         protected override async Task<AuthenticationTicket> CreateTicketAsync(ClaimsIdentity identity, AuthenticationProperties properties, OAuthTokenResponse tokens)
         {
             var request = new HttpRequestMessage(HttpMethod.Get, Options.UserInformationEndpoint);
@@ -44,7 +43,7 @@ namespace MySpotifyMVC.Extensions
             return new AuthenticationTicket(context.Principal, context.Properties, Scheme.Name);
         }
 
-        protected override string BuildChallengeUrl(Microsoft.AspNetCore.Authentication.AuthenticationProperties properties, string redirectUri)
+        protected override string BuildChallengeUrl(AuthenticationProperties properties, string redirectUri)
         {
             var scope = FormatScope();
 

@@ -18,6 +18,7 @@ namespace Tasprof.Apps.MySpotifyDroid
 
         //public string AuthorizeUri = "https://accounts.spotify.com/de/login?continue=https%3A%2F%2Faccounts.spotify.com%2Fde%2Fauthorize%3F";
         public string TokenUri = "https://accounts.spotify.com/api/token";
+        public string RefreshTokenUri = "https://accounts.spotify.com/v1/refresh";
         public string TopDataUri = "https://api.spotify.com/v1/me/top/";
 
 

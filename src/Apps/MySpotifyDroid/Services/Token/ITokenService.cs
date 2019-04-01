@@ -5,6 +5,7 @@ namespace Tasprof.Apps.MySpotifyDroid.Services.Token
 {
     public interface ITokenService
     {
-        Task<string> GetTokenAsync();
+        Task<string> GetAccessTokenAsync();
+        Task<string> GetNewAccessTokenAsync();
     }
 }

@@ -7,14 +7,16 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Tasprof.Apps.MySpotifyDroid.Exceptions;
+using Tasprof.Apps.MySpotifyDroid.Services.Token;
 
 namespace Tasprof.Apps.MySpotifyDroid.Services.Request
 {
     public class RequestService : IRequestService
     {
+        private readonly ITokenService _tokenService;
         private readonly JsonSerializerSettings _serializerSettings;
 
-        public RequestService()
+        public RequestService(ITokenService tokenService)
         {
             _serializerSettings = new JsonSerializerSettings
             {
@@ -23,11 +25,13 @@ namespace Tasprof.Apps.MySpotifyDroid.Services.Request
                 NullValueHandling = NullValueHandling.Ignore
             };
             _serializerSettings.Converters.Add(new StringEnumConverter());
+            _tokenService = tokenService;
         }
 
 
-        public async Task<TResult> GetAsync<TResult>(string uri, string token = "")
+        public async Task<TResult> GetAsync<TResult>(string uri)
         {
+            var token = await _tokenService.GetAccessTokenAsync();
             HttpClient httpClient = CreateHttpClient(token);
             HttpResponseMessage response = await httpClient.GetAsync(uri);
 
@@ -40,8 +44,9 @@ namespace Tasprof.Apps.MySpotifyDroid.Services.Request
             return result;
         }
 
-        public async Task<TResult> PostAsync<TResult>(string uri, TResult data, string token = "", string header = "")
+        public async Task<TResult> PostAsync<TResult>(string uri, TResult data, string header = "")
         {
+            var token = await _tokenService.GetAccessTokenAsync();
             HttpClient httpClient = CreateHttpClient(token);
 
             if (!string.IsNullOrEmpty(header))
@@ -84,8 +89,9 @@ namespace Tasprof.Apps.MySpotifyDroid.Services.Request
             return result;
         }
 
-        public async Task<TResult> PutAsync<TResult>(string uri, TResult data, string token = "", string header = "")
+        public async Task<TResult> PutAsync<TResult>(string uri, TResult data, string header = "")
         {
+            var token = await _tokenService.GetAccessTokenAsync();
             HttpClient httpClient = CreateHttpClient(token);
 
             if (!string.IsNullOrEmpty(header))
@@ -106,8 +112,9 @@ namespace Tasprof.Apps.MySpotifyDroid.Services.Request
             return result;
         }
 
-        public async Task DeleteAsync(string uri, string token = "")
+        public async Task DeleteAsync(string uri)
         {
+            var token = await _tokenService.GetAccessTokenAsync();
             HttpClient httpClient = CreateHttpClient(token);
             await httpClient.DeleteAsync(uri);
         }

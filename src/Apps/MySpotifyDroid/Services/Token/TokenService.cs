@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 namespace Tasprof.Apps.MySpotifyDroid.Services.Token
 {
@@ -9,10 +8,15 @@ namespace Tasprof.Apps.MySpotifyDroid.Services.Token
         {
         }
 
-        public async Task<string> GetTokenAsync()
+        public async Task<string> GetAccessTokenAsync()
         {
             await Task.Delay(1);
             return GlobalSettings.Instance.AuthToken;
+        }
+
+        public Task<string> GetNewAccessTokenAsync()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
