@@ -26,7 +26,6 @@ namespace MySpotifyMVC.Controllers
         [Authorize]
         public async Task<IActionResult> Index()
         {
-             
                 //GlobalSettings.Instance.AuthToken = await HttpContext.GetTokenAsync("access_token");
                 var playHistoryItems = await _spotifyService.GetRecentlyPlayedTracks(DateTimeOffset.UtcNow.ToUnixTimeMilliseconds(), 15);
                 return View(playHistoryItems);

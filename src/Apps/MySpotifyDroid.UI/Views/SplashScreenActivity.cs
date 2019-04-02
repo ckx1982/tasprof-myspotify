@@ -14,7 +14,7 @@ using MvvmCross.Droid.Support.V7.AppCompat;
 
 namespace Tasprof.Apps.MySpotifyDroid.UI.Views
 {
-    [Activity(Label = "MySpotify", MainLauncher =true, NoHistory =true, Icon = "@mipmap/ic_launcher_round" )]
+    [Activity(Label = "MySpotify", MainLauncher =true, NoHistory =true, Icon = "@mipmap/ic_launcher" )]
     public class SplashScreenActivity : MvxSplashScreenAppCompatActivity
     {
         public SplashScreenActivity() : base(Resource.Layout.SplashScreen)

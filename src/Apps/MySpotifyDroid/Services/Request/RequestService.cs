@@ -2,6 +2,7 @@
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
 using System;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -35,7 +36,13 @@ namespace Tasprof.Apps.MySpotifyDroid.Services.Request
             HttpClient httpClient = CreateHttpClient(token);
             HttpResponseMessage response = await httpClient.GetAsync(uri);
 
-            await HandleResponse(response);
+            var succesful = await HandleResponse(response);
+
+            if(!succesful)
+            {
+                return await GetAsync<TResult>(uri);
+            }
+
             string serialized = await response.Content.ReadAsStringAsync();
 
             TResult result = await Task.Run(() =>
@@ -155,20 +162,26 @@ namespace Tasprof.Apps.MySpotifyDroid.Services.Request
             httpClient.DefaultRequestHeaders.Authorization = new BasicAuthenticationHeaderValue(clientId, clientSecret);
         }
 
-        private async Task HandleResponse(HttpResponseMessage response)
+        private async Task<bool> HandleResponse(HttpResponseMessage response)
         {
             if (!response.IsSuccessStatusCode)
             {
                 var content = await response.Content.ReadAsStringAsync();
 
-                if (response.StatusCode == HttpStatusCode.Forbidden ||
-                    response.StatusCode == HttpStatusCode.Unauthorized)
+                if (response.StatusCode == HttpStatusCode.Forbidden)
                 {
                     throw new ServiceAuthenticationException(content);
                 }
 
+                if (response.StatusCode == HttpStatusCode.Unauthorized)
+                {
+                    await _tokenService.GetNewAccessTokenAsync(this);
+                    return false;
+                }
+
                 throw new HttpRequestExceptionEx(response.StatusCode, content);
             }
+            return true;
         }
 
         #endregion  

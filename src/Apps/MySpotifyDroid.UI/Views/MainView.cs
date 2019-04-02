@@ -19,6 +19,8 @@ namespace Tasprof.Apps.MySpotifyDroid.UI.Views
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.MainView);
 
+            GlobalSettings.Instance.RedirectUri = "myspotify://customtabs";
+
             try
             {
                 AuthenticationRequest request = GetAuthenticationRequest(AuthenticationResponse.Type.Code);

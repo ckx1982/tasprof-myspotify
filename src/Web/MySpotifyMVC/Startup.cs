@@ -11,6 +11,7 @@ using Tasprof.Apps.MySpotifyDroid;
 using Tasprof.Apps.MySpotifyDroid.Services.Identity;
 using Tasprof.Apps.MySpotifyDroid.Services.Request;
 using Tasprof.Apps.MySpotifyDroid.Services.Spotify;
+using Tasprof.Apps.MySpotifyDroid.Services.Token;
 
 namespace MySpotifyMVC
 {
@@ -61,6 +62,7 @@ namespace MySpotifyMVC
             //services.AddScoped<ISpotifyService, SpotifyMockService>();
             services.AddScoped<IRequestService, RequestService>();
             services.AddScoped<IIdentityService, IdentityService>();
+            services.AddScoped<ITokenService, AspNetCoreTokenServiceProvider>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

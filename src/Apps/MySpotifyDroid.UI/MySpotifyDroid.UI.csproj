@@ -104,6 +104,7 @@
     <AndroidResource Include="Resources\layout\PlaylistTemplate.axml" />
     <AndroidResource Include="Resources\layout\Playlist.axml" />
     <AndroidResource Include="Resources\layout\PlaylistTrackTemplate.axml" />
+    <AndroidResource Include="Resources\anim\item_animation_fall_down.xml" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MvvmCross">
@@ -182,6 +183,9 @@
     <AndroidResource Include="Resources\layout\PlayHistoryItemTemplate.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\anim\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
