@@ -1,9 +1,9 @@
 ﻿using Android.App;
 using Android.OS;
 using Android.Support.V7.Widget;
-using Android.Views.Animations;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.Droid.Support.V7.RecyclerView;
+using Tasprof.Apps.MySpotifyDroid.UI.Animators;
 using Tasprof.Apps.MySpotifyDroid.ViewModels;
 
 namespace Tasprof.Apps.MySpotifyDroid.UI.Views
@@ -19,12 +19,7 @@ namespace Tasprof.Apps.MySpotifyDroid.UI.Views
             var recyclerView = FindViewById<MvxRecyclerView>(Resource.Id.mvxRvPlayHistory);
             LinearLayoutManager layoutmanager = (LinearLayoutManager)recyclerView.GetLayoutManager();
             recyclerView.AddOnScrollListener(new MvxRecyclerViewOnScrollListener(layoutmanager, ViewModel));
-            //var context = recyclerView.Context;
-            //LayoutAnimationController controller;
-            //controller = AnimationUtils.LoadLayoutAnimation(context, Resource.Animation.abc_fade_in);
-            //recyclerView.LayoutAnimation = controller;
-            //recyclerView.ScheduleLayoutAnimation();
-
+            recyclerView.SetItemAnimator(new FadeInAnimator(recyclerView.Context));
         }
     }
 
@@ -58,5 +53,4 @@ namespace Tasprof.Apps.MySpotifyDroid.UI.Views
         }
 
     }
-
 }
