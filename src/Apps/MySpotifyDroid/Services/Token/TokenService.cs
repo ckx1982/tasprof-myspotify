@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using Tasprof.Apps.MySpotifyDroid.Models;
 using Tasprof.Apps.MySpotifyDroid.Services.Request;
 
 namespace Tasprof.Apps.MySpotifyDroid.Services.Token
@@ -15,9 +16,13 @@ namespace Tasprof.Apps.MySpotifyDroid.Services.Token
             return GlobalSettings.Instance.AuthToken;
         }
 
-        public Task<string> GetNewAccessTokenAsync(IRequestService requestService)
+        public async Task<string> GetNewAccessTokenAsync(IRequestService requestService)
         {
-            throw new System.NotImplementedException();
+            GlobalSettings.Instance.AuthToken = string.Empty;
+            var refresh_token = GlobalSettings.Instance.RefreshToken;
+            var userToken = await requestService.PostAsync<UserToken>(GlobalSettings.Instance.TokenUri, $"grant_type=refresh_token&refresh_token={refresh_token}", GlobalSettings.Instance.ClientId, GlobalSettings.Instance.ClientSecret);
+            GlobalSettings.Instance.AuthToken = userToken.AccessToken;
+            return userToken.AccessToken;
         }
     }
 }

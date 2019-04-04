@@ -6,7 +6,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/gridLayoutPlaylist"
         android:rowCount="2"  
-        android:background="@color/colorPrimaryDark"
         android:columnCount="1">
     
     <FFImageLoading.Cross.MvxCachedImageView
@@ -17,7 +16,6 @@
             local:MvxBind="ImagePath MainImage.Url"/>
     <TextView
         android:layout_row="1"
-        android:textColor="#ffffff"
         android:layout_gravity="center"
         android:textAlignment="center"
         android:layout_width="match_parent"

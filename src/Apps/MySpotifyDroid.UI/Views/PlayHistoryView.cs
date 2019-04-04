@@ -3,7 +3,9 @@ using Android.OS;
 using Android.Support.V7.Widget;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.Droid.Support.V7.RecyclerView;
-using Tasprof.Apps.MySpotifyDroid.UI.Animators;
+using MvvmCross.Platforms.Android.Binding.BindingContext;
+using Tasprof.Apps.MySpotifyDroid.UI.Adapters;
+using Tasprof.Apps.MySpotifyDroid.UI.Listeners;
 using Tasprof.Apps.MySpotifyDroid.ViewModels;
 
 namespace Tasprof.Apps.MySpotifyDroid.UI.Views
@@ -11,46 +13,17 @@ namespace Tasprof.Apps.MySpotifyDroid.UI.Views
     [Activity(Label = "Play History")]
     public class PlayHistoryView : MvxAppCompatActivity<PlayHistoryViewModel>
     {
-        protected override void OnCreate(Bundle savedInstanceState)
+        protected override void OnCreate(Bundle bundle)
         {
-            base.OnCreate(savedInstanceState);
+            base.OnCreate(bundle);
             SetContentView(Resource.Layout.PlayHistory);
          
             var recyclerView = FindViewById<MvxRecyclerView>(Resource.Id.mvxRvPlayHistory);
+            recyclerView.Adapter = new AnimatorMvxRecyclerAdapter((IMvxAndroidBindingContext)BindingContext);
             LinearLayoutManager layoutmanager = (LinearLayoutManager)recyclerView.GetLayoutManager();
             recyclerView.AddOnScrollListener(new MvxRecyclerViewOnScrollListener(layoutmanager, ViewModel));
-            recyclerView.SetItemAnimator(new FadeInAnimator(recyclerView.Context));
         }
     }
 
-    public class MvxRecyclerViewOnScrollListener : RecyclerView.OnScrollListener
-    {
-        private readonly LinearLayoutManager _layoutManager;
-        private readonly PlayHistoryViewModel _viewModel;
 
-        public MvxRecyclerViewOnScrollListener(LinearLayoutManager layoutManager, PlayHistoryViewModel viewModel)
-        {
-            _layoutManager = layoutManager;
-            _viewModel = viewModel;
-        }
-
-        public override void OnScrollStateChanged(RecyclerView recyclerView, int newState)
-        {
-            base.OnScrollStateChanged(recyclerView, newState);
-        }
-
-        public override void OnScrolled(RecyclerView recyclerView, int dx, int dy)
-        {
-            base.OnScrolled(recyclerView, dx, dy);
-            var visibleItemCount = recyclerView.ChildCount;
-            var totalItemCount = recyclerView.GetAdapter().ItemCount;
-            var pastVisiblesItems = _layoutManager.FindFirstVisibleItemPosition();
-
-            if ((visibleItemCount + pastVisiblesItems) >= totalItemCount)
-            {
-                _viewModel.LoadMoreItemsCommand.Execute();
-            }
-        }
-
-    }
 }

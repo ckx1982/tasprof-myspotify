@@ -13,6 +13,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{B1363AAA-A784-43EF-BAE6-371194C32557}"
 	ProjectSection(SolutionItems) = preProject
 		docs\ReadMe.md = docs\ReadMe.md
+		docs\Notes.txt = docs\Notes.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mobile", "Mobile", "{41D7FCB2-EFE7-4FCF-BD24-5DBB2407F877}"

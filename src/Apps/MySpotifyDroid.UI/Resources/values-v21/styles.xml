@@ -1,0 +1,9 @@
+﻿<resources>
+<!-- Theme an individual view: -->
+<style name="CardView.MyBlue">
+
+    <!-- Change the background color to Xamarin blue: -->
+    <item name="cardBackgroundColor">@color/primary_dark</item>
+   
+</style>
+    </resources>

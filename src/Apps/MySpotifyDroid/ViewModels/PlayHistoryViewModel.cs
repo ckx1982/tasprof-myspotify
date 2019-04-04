@@ -2,21 +2,23 @@
 using MvvmCross.ViewModels;
 using System;
 using System.Threading.Tasks;
+using Tasprof.Apps.MySpotifyDroid.Interfaces;
 using Tasprof.Apps.MySpotifyDroid.Models;
 using Tasprof.Apps.MySpotifyDroid.Services.Spotify;
 
 namespace Tasprof.Apps.MySpotifyDroid.ViewModels
 {
-    public class PlayHistoryViewModel : MvxViewModel
+    public class PlayHistoryViewModel : MvxViewModel, ILoadingMoreViewModel
     {
         private readonly ISpotifyService _spotifyService;
-        private readonly int _limit = 10;
+        private readonly int _limit = 15;
         private long _before = DateTimeOffset.Now.ToUnixTimeMilliseconds();
-
-        public IMvxAsyncCommand LoadMoreItemsCommand => new MvxAsyncCommand(LoadMoreItems);
 
         private MvxObservableCollection<PlayHistoryItem> _playHistoryItems; 
         public MvxObservableCollection<PlayHistoryItem> PlayHistoryItems { get { return _playHistoryItems; } set { SetProperty(ref _playHistoryItems, value); } }
+
+        private IMvxAsyncCommand _loadMoreItemsCommand => new MvxAsyncCommand(LoadMoreItems);
+        IMvxAsyncCommand ILoadingMoreViewModel.LoadMoreItemsCommand { get => _loadMoreItemsCommand; }
 
         public PlayHistoryViewModel(ISpotifyService spotifyService)
         {
@@ -39,8 +41,12 @@ namespace Tasprof.Apps.MySpotifyDroid.ViewModels
         {
             var playHistory = await _spotifyService.GetRecentlyPlayedTracks(_before, _limit);
             _before = playHistory.Cursors.Before;
-            PlayHistoryItems.AddRange(playHistory.Items);
-            //PlayHistoryItems = PlayHistoryItems;
+
+            foreach (var item in playHistory.Items)
+            {
+                PlayHistoryItems.Add(item);
+            }
+            //PlayHistoryItems.AddRange(playHistory.Items);
         }
     }
 }

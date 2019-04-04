@@ -17,3 +17,7 @@ Xamarin.FFImageLoading
 Xamarin.FFImageLoading.Transformations  
 Newtonsoft.Json  
 Mobile.BuildTools     
+
+
+
+
