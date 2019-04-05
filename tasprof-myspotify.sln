@@ -6,21 +6,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7832C3A4-08C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apps", "Apps", "{6F6E0255-D713-4462-8A00-5E54ED7DE6F3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MySpotifyDroid", "src\Apps\MySpotifyDroid\MySpotifyDroid.csproj", "{E924C3ED-3F17-457C-A389-A4F2C71A7282}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MySpotify.Core", "src\Apps\MySpotify.Core\MySpotify.Core.csproj", "{E924C3ED-3F17-457C-A389-A4F2C71A7282}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySpotifyDroid.UI", "src\Apps\MySpotifyDroid.UI\MySpotifyDroid.UI.csproj", "{48D7D3D0-17D6-40AF-B70A-B1E353F93450}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySpotify.Droid.UI", "src\Apps\MySpotify.Droid.UI\MySpotify.Droid.UI.csproj", "{48D7D3D0-17D6-40AF-B70A-B1E353F93450}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{B1363AAA-A784-43EF-BAE6-371194C32557}"
 	ProjectSection(SolutionItems) = preProject
-		docs\ReadMe.md = docs\ReadMe.md
 		docs\Notes.txt = docs\Notes.txt
+		docs\ReadMe.md = docs\ReadMe.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mobile", "Mobile", "{41D7FCB2-EFE7-4FCF-BD24-5DBB2407F877}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{6E6F050D-4CBE-4A50-8626-685EBC32DB25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySpotifyMVC", "src\Web\MySpotifyMVC\MySpotifyMVC.csproj", "{5D25D9DF-4D19-4E3B-B588-8F5A3780552A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MySpotify.WebMVC", "src\Web\MySpotify.WebMVC\MySpotify.WebMVC.csproj", "{5D25D9DF-4D19-4E3B-B588-8F5A3780552A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
