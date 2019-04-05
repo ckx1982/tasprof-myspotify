@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Tasprof.Apps.MySpotify.Core.Constants;
-using Tasprof.Apps.MySpotify.Core.Models;
-using Tasprof.Apps.MySpotify.Core.Services.Request;
+using Tasprof.Components.SpotifyClient.Constants;
+using Tasprof.Components.SpotifyClient.Models;
+using Tasprof.Components.SpotifyClient.Services.Request;
 
-namespace Tasprof.Apps.MySpotify.Core.Services.Spotify
+namespace Tasprof.Components.SpotifyClient.Services.Spotify
 {
-    public class SpotifyService :ISpotifyService
+    public class SpotifyService : BaseService<IGlobalSettings>,ISpotifyService
     {
         private readonly IRequestService _requestService;
 
@@ -27,7 +27,6 @@ namespace Tasprof.Apps.MySpotify.Core.Services.Spotify
             var uri = $"{SpotifyWebApi.SpotifyApiUri}playlists/{playlistId}/tracks";
             var result = await _requestService.GetAsync<PlaylistItems>(uri);
             return result.Items;
-
         }
 
         public async Task<List<Artist>> GetTopArtists()

@@ -5,24 +5,24 @@ using Tasprof.Apps.MySpotify.WebMvc.Models;
 using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
-using Tasprof.Apps.MySpotify.Core.Services.Spotify;
+using Tasprof.Components.SpotifyClient;
 
 namespace Tasprof.Apps.MySpotify.WebMvc.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ISpotifyService _spotifyService;
+        private readonly ISpotifyClient _spotifyClient;
 
-        public HomeController(ISpotifyService spotifyService)
+        public HomeController(ISpotifyClient spotifyClient)
         {
-            _spotifyService = spotifyService;
+            _spotifyClient = spotifyClient;
         }
 
         [Authorize]
         public async Task<IActionResult> Index()
         {
                 //GlobalSettings.Instance.AuthToken = await HttpContext.GetTokenAsync("access_token");
-                var playHistoryItems = await _spotifyService.GetRecentlyPlayedTracks(DateTimeOffset.UtcNow.ToUnixTimeMilliseconds(), 15);
+                var playHistoryItems = await _spotifyClient.SpotifyService.GetRecentlyPlayedTracks(DateTimeOffset.UtcNow.ToUnixTimeMilliseconds(), 15);
                 return View(playHistoryItems);
         }
 

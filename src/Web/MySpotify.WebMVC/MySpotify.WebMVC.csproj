@@ -7,18 +7,25 @@
     <RootNamespace>Tasprof.Apps.MySpotify.WebMvc</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Remove="secrets.json" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
   </ItemGroup>
 
-
   <ItemGroup>
-    <ProjectReference Include="..\..\Apps\MySpotify.Core\MySpotify.Core.csproj" />
+    <Folder Include="Exceptions\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Exceptions\" />
+    <None Include="secrets.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Components\SpotifyService\SpotifyClient.csproj" />
   </ItemGroup>
 </Project>

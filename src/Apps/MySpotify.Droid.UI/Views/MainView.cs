@@ -4,7 +4,6 @@ using Android.OS;
 using Com.Spotify.Sdk.Android.Authentication;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using System;
-using Tasprof.Apps.MySpotify.Core;
 using Tasprof.Apps.MySpotify.Core.ViewModels.Main;
 
 namespace Tasprof.Apps.MySpotify.Droid.UI.Views
@@ -20,7 +19,8 @@ namespace Tasprof.Apps.MySpotify.Droid.UI.Views
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.MainView);
 
-            GlobalSettings.Instance.RedirectUri = "myspotify://customtabs";
+            ViewModel.RedirectUri = "myspotify://customtabs";
+            //GlobalSettingsService.Instance.RedirectUri = "myspotify://customtabs";
 
             try
             {
@@ -43,18 +43,18 @@ namespace Tasprof.Apps.MySpotify.Droid.UI.Views
 
             if (requestCode == AUTH_CODE_REQUEST_CODE)
             {
-                GlobalSettings.Instance.AuthCode = response.Code;
+                ViewModel.AuthorizationCode = response.Code;
             }
 
             if (requestCode == AUTH_TOKEN_REQUEST_CODE)
             {
-                GlobalSettings.Instance.AuthToken = response.AccessToken;
+                ViewModel.AccessToken = response.AccessToken;
             }
         }
 
         private AuthenticationRequest GetAuthenticationRequest(AuthenticationResponse.Type type)
         {
-            return new AuthenticationRequest.Builder(GlobalSettings.Instance.ClientId, type, GlobalSettings.Instance.RedirectUri)
+            return new AuthenticationRequest.Builder(ViewModel.ClientId, type, ViewModel.RedirectUri)
                 .SetShowDialog(true)
                 .SetScopes(new string[] {
                     "user-read-email",

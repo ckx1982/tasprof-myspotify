@@ -7,11 +7,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Tasprof.Apps.MySpotify.WebMvc.Extensions;
-using Tasprof.Apps.MySpotify.Core;
-using Tasprof.Apps.MySpotify.Core.Services.Identity;
-using Tasprof.Apps.MySpotify.Core.Services.Request;
-using Tasprof.Apps.MySpotify.Core.Services.Spotify;
-using Tasprof.Apps.MySpotify.Core.Services.Token;
+using Tasprof.Components.SpotifyClient;
+using Tasprof.Components.SpotifyClient.Services.Request;
+using Tasprof.Components.SpotifyClient.Services.Spotify;
+using Tasprof.Components.SpotifyClient.Services.Identity;
+using Tasprof.Components.SpotifyClient.Services.Token;
 
 namespace Tasprof.Apps.MySpotify.WebMvc
 {
@@ -47,8 +47,8 @@ namespace Tasprof.Apps.MySpotify.WebMvc
                         SpotifyAuthenticationScheme,
                         o =>
                         {
-                            o.ClientId = GlobalSettings.Instance.ClientId;
-                            o.ClientSecret = GlobalSettings.Instance.ClientSecret;
+                            o.ClientId = Configuration["ClientId"];
+                            o.ClientSecret = Configuration["ClientSecret"];
                             o.Scope.Add("playlist-read-private");
                             o.Scope.Add("playlist-read-collaborative");
                             o.SaveTokens = true;
@@ -58,6 +58,8 @@ namespace Tasprof.Apps.MySpotify.WebMvc
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddHttpContextAccessor();
 
+            services.AddSingleton<IGlobalSettings, GlobalSettings>();
+            services.AddScoped<ISpotifyClient, SpotifyClient>();
             services.AddScoped<ISpotifyService, SpotifyService>();
             //services.AddScoped<ISpotifyService, SpotifyMockService>();
             services.AddScoped<IRequestService, RequestService>();

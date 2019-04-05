@@ -2,22 +2,20 @@
 using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
-using Tasprof.Apps.MySpotify.Core.Constants;
-using Tasprof.Apps.MySpotify.Core.Models;
-using Tasprof.Apps.MySpotify.Core.Services.Request;
+using Tasprof.Components.SpotifyClient.Constants;
+using Tasprof.Components.SpotifyClient.Models;
+using Tasprof.Components.SpotifyClient.Services.Request;
 
-namespace Tasprof.Apps.MySpotify.Core.Services.Identity
+namespace Tasprof.Components.SpotifyClient.Services.Identity
 {
-    public class IdentityService : IIdentityService
+    public class IdentityService : BaseService<IGlobalSettings>, IIdentityService
     {
         private readonly IRequestService _requestProvider;
-        private readonly IGlobalSettingsService _globalSettingsService;
         private string _codeVerifier;
 
-        public IdentityService(IRequestService requestProvider, IGlobalSettingsService globalSettingsService)
+        public IdentityService(IRequestService requestProvider)
         {
             _requestProvider = requestProvider;
-            _globalSettingsService = globalSettingsService;
         }
 
         public string CreateAuthorizationRequest()
@@ -27,10 +25,10 @@ namespace Tasprof.Apps.MySpotify.Core.Services.Identity
 
             // Dictionary with values for the authorize request
             var dic = new Dictionary<string, string>();
-            dic.Add("client_id", _globalSettingsService.ClientId);
+            dic.Add("client_id", GlobalSettings.ClientId);
             //dic.Add("client_secret", GlobalSettings.Instance.ClientSecret);
             dic.Add("response_type", "code");
-            dic.Add("redirect_uri", _globalSettingsService.RedirectUri);
+            dic.Add("redirect_uri", GlobalSettings.RedirectUri);
             dic.Add("scope", "user-read-private user-read-email user-top-read");
 
             // Add CSRF token to protect against cross-site request forgery attacks.
@@ -57,8 +55,8 @@ namespace Tasprof.Apps.MySpotify.Core.Services.Identity
 
         public async Task<UserToken> GetTokenAsync(string code)
         {
-            string data = string.Format("grant_type=authorization_code&code={0}&redirect_uri={1}&code_verifier={2}", code, WebUtility.UrlEncode(_globalSettingsService.RedirectUri), _codeVerifier);
-            var token = await _requestProvider.PostAsync<UserToken>(SpotifyWebApi.TokenUri, data, _globalSettingsService.ClientId, _globalSettingsService.ClientSecret);
+            string data = string.Format("grant_type=authorization_code&code={0}&redirect_uri={1}&code_verifier={2}", code, WebUtility.UrlEncode(GlobalSettings.RedirectUri), _codeVerifier);
+            var token = await _requestProvider.PostAsync<UserToken>(SpotifyWebApi.TokenUri, data, GlobalSettings.ClientId, GlobalSettings.ClientSecret);
             return token;
         }
 
