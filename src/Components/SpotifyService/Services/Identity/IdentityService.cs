@@ -8,14 +8,15 @@ using Tasprof.Components.SpotifyClient.Services.Request;
 
 namespace Tasprof.Components.SpotifyClient.Services.Identity
 {
-    public class IdentityService : BaseService<IGlobalSettings>, IIdentityService
+    public class IdentityService : BaseService, IIdentityService
     {
         private readonly IRequestService _requestProvider;
         private string _codeVerifier;
 
-        public IdentityService(IRequestService requestProvider)
+        public IdentityService(IRequestService requestProvider, IGlobalSettings globalSettings)
         {
             _requestProvider = requestProvider;
+            GlobalSettings = globalSettings;
         }
 
         public string CreateAuthorizationRequest()

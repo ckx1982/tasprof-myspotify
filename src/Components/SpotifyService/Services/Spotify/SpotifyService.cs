@@ -6,13 +6,13 @@ using Tasprof.Components.SpotifyClient.Services.Request;
 
 namespace Tasprof.Components.SpotifyClient.Services.Spotify
 {
-    public class SpotifyService : BaseService<IGlobalSettings>,ISpotifyService
+    public class SpotifyService : ISpotifyService
     {
         private readonly IRequestService _requestService;
 
         public SpotifyService(IRequestService requestService)
         {
-            _requestService = requestService;  
+            _requestService = requestService;
         }
 
         public async Task<List<Playlist>> GetPlaylists()

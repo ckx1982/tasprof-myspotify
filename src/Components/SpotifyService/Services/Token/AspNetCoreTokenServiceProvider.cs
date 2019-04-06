@@ -7,13 +7,14 @@ using Tasprof.Components.SpotifyClient.Services.Request;
 
 namespace Tasprof.Components.SpotifyClient.Services.Token
 {
-    public class AspNetCoreTokenServiceProvider : BaseService<IGlobalSettings>, ITokenService
+    public class AspNetCoreTokenServiceProvider : BaseService, ITokenService
     {
         private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public AspNetCoreTokenServiceProvider(IHttpContextAccessor httpContextAccessor)
+        public AspNetCoreTokenServiceProvider(IHttpContextAccessor httpContextAccessor, IGlobalSettings globalSettings)
         {
             _httpContextAccessor = httpContextAccessor;
+            GlobalSettings = globalSettings;
         }
 
         public async Task<string> GetAccessTokenAsync()

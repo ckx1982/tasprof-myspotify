@@ -29,7 +29,7 @@ namespace Tasprof.Components.SpotifyClient
 
         string IGlobalSettings.ClientSecret => Secrets.ClientSecret;
 
-        string IGlobalSettings.RedirectUri => "https://localhost:5001/Home/AuthResponse";
+        string IGlobalSettings.RedirectUri => "https://localhost:5001/signin";
 
         //string IGlobalSettings.BaseGeneralSpotifyUri => "https://api.spotify.com/v1/";
 

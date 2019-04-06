@@ -5,11 +5,12 @@ using Tasprof.Components.SpotifyClient.Services.Request;
 
 namespace Tasprof.Components.SpotifyClient.Services.Token
 {
-    public class TokenService: BaseService<IGlobalSettings>, ITokenService
+    public class TokenService: BaseService, ITokenService
     {
       
-        public TokenService()
+        public TokenService(IGlobalSettings globalSettings)
         {
+            GlobalSettings = globalSettings;
         }
 
         public async Task<string> GetAccessTokenAsync()

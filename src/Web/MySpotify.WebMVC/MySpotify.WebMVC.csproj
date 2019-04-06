@@ -22,10 +22,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="secrets.json" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\Components\SpotifyService\SpotifyClient.csproj" />
   </ItemGroup>
 </Project>

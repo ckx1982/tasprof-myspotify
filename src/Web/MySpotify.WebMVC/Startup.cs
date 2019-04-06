@@ -54,7 +54,7 @@ namespace Tasprof.Apps.MySpotify.WebMvc
                             o.SaveTokens = true;
                         });
 
-            services.AddRouting(options => { options.LowercaseUrls = true; });
+            //services.AddRouting(options => { options.LowercaseUrls = true; });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddHttpContextAccessor();
 
