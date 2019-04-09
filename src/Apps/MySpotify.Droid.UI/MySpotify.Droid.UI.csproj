@@ -74,6 +74,7 @@
     <Compile Include="Views\PlaylistsView.cs" />
     <Compile Include="Views\PlaylistView.cs" />
     <Compile Include="Listeners\MvxRecyclerViewOnScrollListener.cs" />
+    <Compile Include="Views\PlayHistoryItemView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="assetlinks.json" />

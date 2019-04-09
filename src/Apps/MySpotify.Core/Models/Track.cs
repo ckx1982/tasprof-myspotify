@@ -17,5 +17,8 @@ namespace Tasprof.Apps.MySpotify.Core.Models
         public Album Album { get; set; }
 
         public Artist MainArtist => Artists.First();
+
+        [JsonProperty(PropertyName = "uri")]
+        public string Uri { get; set; }
     }
 }

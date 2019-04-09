@@ -1,5 +1,4 @@
-﻿using System;
-namespace Tasprof.Apps.MySpotify.Core.Navigation
+﻿namespace Tasprof.Apps.MySpotify.Core.Navigation
 {
     public class PlaylistNavigationArgs
     {

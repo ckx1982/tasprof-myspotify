@@ -12,10 +12,31 @@ namespace Tasprof.Apps.MySpotify.Core.ViewModels.Main
         public IMvxAsyncCommand PlaylistsCommand { get; private set; }
         public IMvxAsyncCommand RecentlyPlayedCommand { get; private set; }
 
-        public string RedirectUri { get { return _globalSettingsService.RedirectUri; } set { _globalSettingsService.RedirectUri = value; } }
-        public string ClientId { get { return _globalSettingsService.ClientId; } }
-        public string AccessToken { get { return _globalSettingsService.AccessToken; } set { _globalSettingsService.AccessToken = value; } }
-        public string AuthorizationCode { get { return _globalSettingsService.AuthorizationCode; } set { _globalSettingsService.AuthorizationCode = value; } }
+        public string RedirectUri
+        {
+            get { return _globalSettingsService.RedirectUri; }
+            set { _globalSettingsService.RedirectUri = value; }
+        }
+
+        public string ClientId
+        {
+            get { return _globalSettingsService.ClientId; }
+        }
+
+        public string AccessToken
+        {
+            get { return _globalSettingsService.AccessToken; }
+            set
+            {
+                _globalSettingsService.AccessToken = value;
+            }
+        }
+
+        public string AuthorizationCode
+        {
+            get { return _globalSettingsService.AuthorizationCode; }
+            set { _globalSettingsService.AuthorizationCode = value; }
+        }
 
         private readonly IMvxNavigationService _navigationService;
         private readonly IGlobalSettingsService _globalSettingsService;

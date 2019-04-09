@@ -10,5 +10,7 @@ namespace Tasprof.Apps.MySpotify.Core.Models
 
         [JsonProperty(PropertyName = "played_at")]
         public DateTime PlayedAt { get; set; }
+
+        public string PlayedAtFormatted => PlayedAt.ToString("dd/MM/yy HH24:mm");
     }
 }

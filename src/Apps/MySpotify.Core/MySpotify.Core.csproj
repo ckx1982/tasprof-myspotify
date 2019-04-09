@@ -28,5 +28,7 @@
     <Folder Include="Navigation\" />
     <Folder Include="Services\Token\" />
     <Folder Include="Interfaces\" />
+    <Folder Include="Enums\" />
+    <Folder Include="Interactions\" />
   </ItemGroup>
 </Project>
