@@ -25,15 +25,13 @@ namespace Tasprof.Apps.MySpotify.Droid.UI.Views
     public class PlayHistoryItemView : MvxAppCompatActivity<PlayHistoryItemViewModel>
     {
 
-   
-
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
-            var set = this.CreateBindingSet<PlayHistoryItemView, PlayHistoryItemViewModel>();
-            set.Bind(this).For(view => view.Interaction).To(viewModel => viewModel.Interaction).OneWay();
-            set.Apply();
+            //var set = this.CreateBindingSet<PlayHistoryItemView, PlayHistoryItemViewModel>();
+            //set.Bind(this).For(view => view.Interaction).To(viewModel => viewModel.Interaction).OneWay();
+            //set.Apply();
 
             //Intent intent = new Intent(Intent.ActionView);
 
@@ -48,28 +46,28 @@ namespace Tasprof.Apps.MySpotify.Droid.UI.Views
         }
 
 
-        private IMvxInteraction<ContextMenuItemInteraction> _interaction;
-        public IMvxInteraction<ContextMenuItemInteraction> Interaction
-        {
-            get => _interaction;
-            set
-            {
-                if (_interaction != null)
-                    _interaction.Requested -= OnInteractionRequested;
+        //private IMvxInteraction<ContextMenuItemInteraction> _interaction;
+        //public IMvxInteraction<ContextMenuItemInteraction> Interaction
+        //{
+        //    get => _interaction;
+        //    set
+        //    {
+        //        if (_interaction != null)
+        //            _interaction.Requested -= OnInteractionRequested;
 
-                _interaction = value;
-                _interaction.Requested += OnInteractionRequested;
-            }
-        }
+        //        _interaction = value;
+        //        _interaction.Requested += OnInteractionRequested;
+        //    }
+        //}
 
-        private async void OnInteractionRequested(object sender, MvxValueEventArgs<ContextMenuItemInteraction> e)
-        {
-            var callback = e.Value;
-            // show dialog
-            //var status = await ShowDialog(0);
-            await Task.Delay(1);
-            callback.Callback(ContextMenuItem.Play);
-        }
+        //private async void OnInteractionRequested(object sender, MvxValueEventArgs<ContextMenuItemInteraction> e)
+        //{
+        //    var callback = e.Value;
+        //    // show dialog
+        //    //var status = await ShowDialog(0);
+        //    await Task.Delay(1);
+        //    callback.Callback(ContextMenuItem.Play);
+        //}
 
 
     }

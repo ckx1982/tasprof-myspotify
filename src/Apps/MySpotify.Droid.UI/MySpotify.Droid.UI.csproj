@@ -75,7 +75,7 @@
     <Compile Include="Views\PlaylistView.cs" />
     <Compile Include="Listeners\MvxRecyclerViewOnScrollListener.cs" />
     <Compile Include="Views\PlayHistoryItemView.cs" />
-    <Compile Include="Dialogs\PlayHistoryItemDetailsFragment.cs" />
+    <Compile Include="Dialogs\PlayHistoryItemDetailsDialogFragment.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="assetlinks.json" />
@@ -111,7 +111,7 @@
     <AndroidResource Include="Resources\anim\item_animation_fall_down.xml" />
     <AndroidResource Include="Resources\anim\layout_animation_fall_down.xml" />
     <AndroidResource Include="Resources\values-v21\styles.xml" />
-    <AndroidResource Include="Resources\layout\PlayHistoryItemDetailsDialog.axml" />
+    <AndroidResource Include="Resources\layout\PlayHistoryItemDetails.axml" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MvvmCross">

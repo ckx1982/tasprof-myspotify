@@ -1,4 +1,5 @@
-﻿using MvvmCross.Navigation;
+﻿using System.Threading.Tasks;
+using MvvmCross.Navigation;
 using Tasprof.Apps.MySpotify.Core.Models;
 using Tasprof.Apps.MySpotify.Core.Navigation;
 
@@ -8,7 +9,20 @@ namespace Tasprof.Apps.MySpotify.Core.ViewModels.PlayHistory
     {
         private readonly IMvxNavigationService _navigationService;
 
-        public PlayHistoryItem PlayHistoryItem { get; set; }
+        private string _text;
+        public string Text
+        {
+            get { return _text; }
+            set { SetProperty(ref _text, value); }
+        }
+
+
+        private PlayHistoryItem _playHistoryItem;
+        public PlayHistoryItem PlayHistoryItem
+        {
+            get { return _playHistoryItem; }
+            set { SetProperty(ref _playHistoryItem, value); }
+        }
 
         public PlayHistoryItemDetailsViewModel(IMvxNavigationService navigationService)
         {
@@ -18,6 +32,11 @@ namespace Tasprof.Apps.MySpotify.Core.ViewModels.PlayHistory
         public override void Prepare(PlayHistoryItemNavigationArgs parameter)
         {
             PlayHistoryItem = parameter.Item;
+        }
+
+        public override async Task Initialize()
+        {
+            await base.Initialize();
         }
     }
 }

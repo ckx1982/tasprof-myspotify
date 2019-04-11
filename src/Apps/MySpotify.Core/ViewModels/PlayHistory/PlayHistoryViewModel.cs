@@ -18,6 +18,13 @@ namespace Tasprof.Apps.MySpotify.Core.ViewModels.PlayHistory
         private long _before = DateTimeOffset.Now.ToUnixTimeMilliseconds();
 
 
+        private string _isLoading = "invisible";
+        public string IsLoading
+        {
+            get { return _isLoading; }
+            set { SetProperty(ref _isLoading, value); }
+        }
+
         private MvxObservableCollection<PlayHistoryItemViewModel> _playHistoryItems; 
         public MvxObservableCollection<PlayHistoryItemViewModel> PlayHistoryItems { get { return _playHistoryItems; } set { SetProperty(ref _playHistoryItems, value); } }
 
@@ -35,11 +42,12 @@ namespace Tasprof.Apps.MySpotify.Core.ViewModels.PlayHistory
 
         public async override Task Initialize()
         {
-           
-                await base.Initialize();
-                _playHistoryItems = new MvxObservableCollection<PlayHistoryItemViewModel>();
-                await LoadItems();
-         
+            await base.Initialize();
+            _playHistoryItems = new MvxObservableCollection<PlayHistoryItemViewModel>();
+            IsLoading = "visible";
+            await LoadItems();
+            IsLoading = "invisible";
+
         }
 
         public async Task LoadMoreItems()
@@ -56,6 +64,8 @@ namespace Tasprof.Apps.MySpotify.Core.ViewModels.PlayHistory
             {
                 PlayHistoryItems.Add(new PlayHistoryItemViewModel(_navigationService, _spotifyService, item));
             }
+
+          
             //PlayHistoryItems.AddRange(playHistory.Items);
         }
 
