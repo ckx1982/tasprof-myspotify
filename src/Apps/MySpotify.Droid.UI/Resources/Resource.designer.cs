@@ -7343,46 +7343,49 @@ namespace Tasprof.Apps.MySpotify.Droid.UI
 			public const int PlayHistory = 2130968636;
 			
 			// aapt resource value: 0x7f04003d
-			public const int PlayHistoryItemTemplate = 2130968637;
+			public const int PlayHistoryItemDetailsDialog = 2130968637;
 			
 			// aapt resource value: 0x7f04003e
-			public const int Playlist = 2130968638;
+			public const int PlayHistoryItemTemplate = 2130968638;
 			
 			// aapt resource value: 0x7f04003f
-			public const int Playlists = 2130968639;
+			public const int Playlist = 2130968639;
 			
 			// aapt resource value: 0x7f040040
-			public const int PlaylistTemplate = 2130968640;
+			public const int Playlists = 2130968640;
 			
 			// aapt resource value: 0x7f040041
-			public const int PlaylistTrackTemplate = 2130968641;
+			public const int PlaylistTemplate = 2130968641;
 			
 			// aapt resource value: 0x7f040042
-			public const int select_dialog_item_material = 2130968642;
+			public const int PlaylistTrackTemplate = 2130968642;
 			
 			// aapt resource value: 0x7f040043
-			public const int select_dialog_multichoice_material = 2130968643;
+			public const int select_dialog_item_material = 2130968643;
 			
 			// aapt resource value: 0x7f040044
-			public const int select_dialog_singlechoice_material = 2130968644;
+			public const int select_dialog_multichoice_material = 2130968644;
 			
 			// aapt resource value: 0x7f040045
-			public const int SplashScreen = 2130968645;
+			public const int select_dialog_singlechoice_material = 2130968645;
 			
 			// aapt resource value: 0x7f040046
-			public const int support_simple_spinner_dropdown_item = 2130968646;
+			public const int SplashScreen = 2130968646;
 			
 			// aapt resource value: 0x7f040047
-			public const int TabsView = 2130968647;
+			public const int support_simple_spinner_dropdown_item = 2130968647;
 			
 			// aapt resource value: 0x7f040048
-			public const int tooltip = 2130968648;
+			public const int TabsView = 2130968648;
 			
 			// aapt resource value: 0x7f040049
-			public const int Tracks = 2130968649;
+			public const int tooltip = 2130968649;
 			
 			// aapt resource value: 0x7f04004a
-			public const int TrackTemplate = 2130968650;
+			public const int Tracks = 2130968650;
+			
+			// aapt resource value: 0x7f04004b
+			public const int TrackTemplate = 2130968651;
 			
 			static Layout()
 			{

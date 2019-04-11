@@ -1,7 +1,9 @@
-﻿namespace Tasprof.Apps.MySpotify.Core.Navigation
+﻿using Tasprof.Apps.MySpotify.Core.Models;
+
+namespace Tasprof.Apps.MySpotify.Core.Navigation
 {
     public class PlayHistoryItemNavigationArgs
     {
-        public string TrackUri { get; set; }
+        public PlayHistoryItem Item { get; set; }
     }
 }

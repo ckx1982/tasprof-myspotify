@@ -22,8 +22,8 @@ namespace Tasprof.Apps.MySpotify.Core.ViewModels.PlayHistory
         private readonly PlayHistoryItem _playHistoryItem;
         public PlayHistoryItem PlayHistoryItem { get { return _playHistoryItem; } }
 
-        public IMvxAsyncCommand PlayCommand { get; private set; } 
-        
+        public IMvxAsyncCommand PlayCommand { get; private set; }
+
 
         public PlayHistoryItemViewModel(IMvxNavigationService navigationService, ISpotifyService spotifyService, PlayHistoryItem playHistoryItem)
         {
@@ -40,29 +40,35 @@ namespace Tasprof.Apps.MySpotify.Core.ViewModels.PlayHistory
 
         private async Task PlayCommandTask()
         {
-            // 1. do cool stuff with profile data
-            // ...
-
-            // 2. request interaction from view
-            // 3. execution continues in callbacks
-            var request = new ContextMenuItemInteraction
-            {
-                Callback = async (ok) =>
+            await _navigationService.Navigate<PlayHistoryItemDetailsViewModel, PlayHistoryItemNavigationArgs>(
+                new PlayHistoryItemNavigationArgs()
                 {
-                    switch (ok)
-                    {
-                        case ContextMenuItem.Play:
-                           await _navigationService.Navigate<PlayHistoryItemViewModel>();
-                           break;
-                        case ContextMenuItem.MoreInfo:
-                           await Task.Delay(1); break;
-                        default:
-                            break;
-                    }
-                }
-            };
+                    Item = _playHistoryItem
+                });
+            //    // 1. do cool stuff with profile data
+            //    // ...
 
-            _interaction.Raise(request);
+            //    // 2. request interaction from view
+            //    // 3. execution continues in callbacks
+            //    var request = new ContextMenuItemInteraction
+            //    {
+            //        Callback = async (ok) =>
+            //        {
+            //            switch (ok)
+            //            {
+            //                case ContextMenuItem.Play:
+            //                   await _navigationService.Navigate<PlayHistoryItemViewModel>();
+            //                   break;
+            //                case ContextMenuItem.MoreInfo:
+            //                   await Task.Delay(1); break;
+            //                default:
+            //                    break;
+            //            }
+            //        }
+            //    };
+
+            //    _interaction.Raise(request);
+            //}
         }
     }
 }

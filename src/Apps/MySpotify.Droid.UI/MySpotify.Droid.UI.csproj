@@ -75,6 +75,7 @@
     <Compile Include="Views\PlaylistView.cs" />
     <Compile Include="Listeners\MvxRecyclerViewOnScrollListener.cs" />
     <Compile Include="Views\PlayHistoryItemView.cs" />
+    <Compile Include="Dialogs\PlayHistoryItemDetailsFragment.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="assetlinks.json" />
@@ -110,6 +111,7 @@
     <AndroidResource Include="Resources\anim\item_animation_fall_down.xml" />
     <AndroidResource Include="Resources\anim\layout_animation_fall_down.xml" />
     <AndroidResource Include="Resources\values-v21\styles.xml" />
+    <AndroidResource Include="Resources\layout\PlayHistoryItemDetailsDialog.axml" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MvvmCross">
@@ -193,6 +195,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Dialogs\" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
     Other similar extension points exist, see Microsoft.Common.targets.
