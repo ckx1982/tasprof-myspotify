@@ -6773,6 +6773,9 @@ namespace Tasprof.Apps.MySpotify.Droid.UI
 			// aapt resource value: 0x7f090061
 			public const int image = 2131296353;
 			
+			// aapt resource value: 0x7f0900c6
+			public const int imageViewCover = 2131296454;
+			
 			// aapt resource value: 0x7f0900b0
 			public const int info = 2131296432;
 			
@@ -6800,8 +6803,8 @@ namespace Tasprof.Apps.MySpotify.Droid.UI
 			// aapt resource value: 0x7f090063
 			public const int list_item = 2131296355;
 			
-			// aapt resource value: 0x7f0900c7
-			public const int masked = 2131296455;
+			// aapt resource value: 0x7f0900ca
+			public const int masked = 2131296458;
 			
 			// aapt resource value: 0x7f0900a9
 			public const int media_actions = 2131296425;
@@ -7025,6 +7028,12 @@ namespace Tasprof.Apps.MySpotify.Droid.UI
 			// aapt resource value: 0x7f0900c2
 			public const int textView2 = 2131296450;
 			
+			// aapt resource value: 0x7f0900c7
+			public const int textViewArtist = 2131296455;
+			
+			// aapt resource value: 0x7f0900c8
+			public const int textViewTrack = 2131296456;
+			
 			// aapt resource value: 0x7f09009f
 			public const int text_input_password_toggle = 2131296415;
 			
@@ -7097,8 +7106,8 @@ namespace Tasprof.Apps.MySpotify.Droid.UI
 			// aapt resource value: 0x7f0900c4
 			public const int viewpager1 = 2131296452;
 			
-			// aapt resource value: 0x7f0900c6
-			public const int visible = 2131296454;
+			// aapt resource value: 0x7f0900c9
+			public const int visible = 2131296457;
 			
 			// aapt resource value: 0x7f09003e
 			public const int withText = 2131296318;
@@ -7385,10 +7394,13 @@ namespace Tasprof.Apps.MySpotify.Droid.UI
 			public const int tooltip = 2130968649;
 			
 			// aapt resource value: 0x7f04004a
-			public const int Tracks = 2130968650;
+			public const int TrackQuickInfoWidget = 2130968650;
 			
 			// aapt resource value: 0x7f04004b
-			public const int TrackTemplate = 2130968651;
+			public const int Tracks = 2130968651;
+			
+			// aapt resource value: 0x7f04004c
+			public const int TrackTemplate = 2130968652;
 			
 			static Layout()
 			{

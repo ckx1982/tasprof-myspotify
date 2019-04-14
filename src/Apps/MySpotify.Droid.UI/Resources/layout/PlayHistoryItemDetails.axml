@@ -5,20 +5,36 @@
 	android:orientation="vertical"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	android:background="@color/background_material_light"
 	android:padding="5dp"
 	android:gravity="center">
-
-	<TextView
+    
+    
+    <Tasprof.Apps.MySpotify.Droid.UI.Widgets.TrackQuickInfoWidget 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        local:MvxBind="ImageUrl PlayHistoryItem.Track.MainArtist.MainImage.Url;
+                       Artist PlayHistoryItem.Track.MainArtist.Name;
+                       Track PlayHistoryItem.Track.Title" />
+    
+    
+<!--	<TextView
 		android:textAlignment="center"
-		android:padding="50dp"
 		android:id="@+id/textView1"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:text="test"
+		android:text="Dancing With A Stranger"
 		local:MvxBind="Text PlayHistoryItem.Track.Title"
-		android:gravity="center"
-		local:backgroundTint="#fff51e1e"
-		android:backgroundTint="#ff9f4f4f" />
+		android:gravity="center" />
+    
+    <TextView
+        android:textAlignment="center"
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dancing With A Stranger"
+        local:MvxBind="Text PlayHistoryItem.Track.Title"
+        android:gravity="center"
+        local:backgroundTint="#fff51e1e"
+        android:backgroundTint="#ff9f4f4f" />-->
 
 </LinearLayout>

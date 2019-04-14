@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:showDividers="none"
+	android:gravity="center"
+	android:background="#ffffffff">
+    
+	   <FFImageLoading.Cross.MvxCachedImageView
+            android:id="@+id/imageViewCover"
+            android:layout_height="150dp"
+            android:layout_width="150dp" />
+            
+	<TextView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/textViewArtist"
+		android:text="Eleni Foureira"
+		android:gravity="center" />
+	<TextView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/textViewTrack"
+		android:gravity="center"
+		android:text="Tomame" />
+</LinearLayout>
