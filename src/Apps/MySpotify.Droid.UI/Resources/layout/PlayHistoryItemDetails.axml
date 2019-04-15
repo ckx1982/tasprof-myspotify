@@ -9,12 +9,10 @@
 	android:gravity="center">
     
     
-    <Tasprof.Apps.MySpotify.Droid.UI.Widgets.TrackQuickInfoWidget 
+    <Tasprof.Apps.MySpotify.Droid.UI.Widgets.TrackQuickInfo 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        local:MvxBind="ImageUrl PlayHistoryItem.Track.MainArtist.MainImage.Url;
-                       Artist PlayHistoryItem.Track.MainArtist.Name;
-                       Track PlayHistoryItem.Track.Title" />
+        local:MvxBind="Track PlayHistoryItem.Track" />
     
     
 <!--	<TextView
