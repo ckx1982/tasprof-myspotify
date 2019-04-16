@@ -3,26 +3,21 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
-    <AssemblyName>Tasprof.Apps.MySpotify.WebMvc</AssemblyName>
-    <RootNamespace>Tasprof.Apps.MySpotify.WebMvc</RootNamespace>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Content Remove="secrets.json" />
-  </ItemGroup>
-
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.2.4" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Exceptions\" />
+    <ProjectReference Include="..\SpotifyChart\SpotifyChart.csproj" />
   </ItemGroup>
-
   <ItemGroup>
-    <ProjectReference Include="..\..\Components\SpotifyService\SpotifyClient.csproj" />
-    <ProjectReference Include="..\..\Components\SpotifyChart\SpotifyChart.csproj" />
+    <None Remove="EmptyXmlFile.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
   </ItemGroup>
 </Project>

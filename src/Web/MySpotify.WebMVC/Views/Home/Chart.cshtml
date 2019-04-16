@@ -1,0 +1,15 @@
+﻿@model Tasprof.Components.SpotifyChart.Models.SpotifyChart
+
+<div id="myspotitfy-chart-container">
+    <input type="text" value="@Model.Title" />
+   
+    <ul id="myspotitfy-chart">
+        @foreach(var item in Model.Items) {
+        <li class="myspotify-chartitem">
+            <span>@item.Position</span>
+            <span>@item.Artist</span>
+            <span>@item.Title</span>
+        </li>
+        }
+    </ul>
+</div>

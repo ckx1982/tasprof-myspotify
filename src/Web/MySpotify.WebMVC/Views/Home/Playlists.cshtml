@@ -1,0 +1,17 @@
+﻿@model List<Tasprof.Components.SpotifyClient.Models.Playlist>
+
+
+
+<div id="myspotify-playlist">
+@{
+    foreach(var item in Model) {
+        <div class="myspotify-playlist-item">
+            <a asp-controller="Home" asp-action="Chart" asp-route-id="@item.Id">
+                 <img alt="@item.Name" src="@item.MainImage.Url" />
+            </a>
+            <br />
+            <label>@item.Name</label>
+        </div>
+    }
+}
+</div>

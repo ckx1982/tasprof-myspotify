@@ -18,4 +18,10 @@
     <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.4.4.859" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Services\SpotifyChart\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SpotifyChart\SpotifyChart.csproj" />
+  </ItemGroup>
 </Project>

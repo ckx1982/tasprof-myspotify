@@ -23,7 +23,7 @@ namespace Tasprof.Apps.MySpotify.Droid.UI.Bindings
         {
             this.TrackQuickInfo.Title = ((Track)value).Title;
             this.TrackQuickInfo.Artist = ((Track)value).MainArtist.Name;
-            this.TrackQuickInfo.ImageUrl = ((Track)value).MainArtist.MainImage.Url;
+            this.TrackQuickInfo.ImageUrl = ((Track)value).Album.MainImage.Url;
 
         }
     }

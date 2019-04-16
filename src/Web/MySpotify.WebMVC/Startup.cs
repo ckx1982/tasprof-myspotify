@@ -12,6 +12,7 @@ using Tasprof.Components.SpotifyClient.Services.Request;
 using Tasprof.Components.SpotifyClient.Services.Spotify;
 using Tasprof.Components.SpotifyClient.Services.Identity;
 using Tasprof.Components.SpotifyClient.Services.Token;
+using Tasprof.Components.SpotifyClient.Services.SpotifyChart;
 
 namespace Tasprof.Apps.MySpotify.WebMvc
 {
@@ -61,6 +62,7 @@ namespace Tasprof.Apps.MySpotify.WebMvc
             services.AddSingleton<IGlobalSettings, GlobalSettings>();
             services.AddScoped<ISpotifyClient, SpotifyClient>();
             services.AddScoped<ISpotifyService, SpotifyService>();
+            services.AddScoped<ISpotifyChartService, SpotifyChartService>();
             //services.AddScoped<ISpotifyService, SpotifyMockService>();
             services.AddScoped<IRequestService, RequestService>();
             services.AddScoped<IIdentityService, IdentityService>();
