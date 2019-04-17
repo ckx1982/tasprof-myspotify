@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
@@ -12,9 +12,12 @@
     <PackageReference Include="Tasprof.Components.SpotifyChart" Version="1.0.1" />
   </ItemGroup>
   <ItemGroup>
+    <None Remove="App_Data\store.db" />
     <None Remove="EmptyXmlFile.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Content Include="App_Data\store.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 </Project>
