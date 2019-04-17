@@ -19,6 +19,12 @@
 
   <ItemGroup>
     <Folder Include="Exceptions\" />
+    <Folder Include="Controllers\Playlists\" />
+    <Folder Include="Views\Playlists\" />
+    <Folder Include="Controllers\Charts\" />
+    <Folder Include="Views\Charts\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="ViewModels\Charts\" />
   </ItemGroup>
 
   <ItemGroup>

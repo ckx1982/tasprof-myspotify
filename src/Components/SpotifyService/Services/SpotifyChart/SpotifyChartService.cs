@@ -9,14 +9,12 @@ namespace Tasprof.Components.SpotifyClient.Services.SpotifyChart
 {
     public class SpotifyChartService : ISpotifyChartService
     {
-
         private readonly ISpotifyService _spotifyService;
 
         public SpotifyChartService(ISpotifyService spotifyService)
         {
             _spotifyService = spotifyService;
         }
-
 
         public async Task<Components.SpotifyChart.Models.SpotifyChart> CreateChart(string playlistId)
         {
