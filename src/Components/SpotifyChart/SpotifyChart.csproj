@@ -1,8 +1,17 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>Tasprof.Components.SpotifyChart</RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>Tasprof.Components.SpotifyChart</PackageId>
+    <Company>Tasprof</Company>
+    <Authors>Christos Karabaglidis</Authors>
+    <Version>1.0.1</Version>
+    <AssemblyName>Tasprof.Components.SpotifyChart</AssemblyName>
+    <Product>SpotifyChart</Product>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <FileVersion>1.0.1.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>

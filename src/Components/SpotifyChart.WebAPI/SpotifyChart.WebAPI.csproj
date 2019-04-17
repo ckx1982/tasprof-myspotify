@@ -9,10 +9,7 @@
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.2.4" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\SpotifyChart\SpotifyChart.csproj" />
+    <PackageReference Include="Tasprof.Components.SpotifyChart" Version="1.0.1" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="EmptyXmlFile.xml" />

@@ -1,9 +1,10 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
 using System.Threading.Tasks;
+using Tasprof.Components.MyUtilities.Services.HttpRequest;
+using Tasprof.Components.MyUtilities.Services.Token;
 using Tasprof.Components.SpotifyClient.Constants;
 using Tasprof.Components.SpotifyClient.Models;
-using Tasprof.Components.SpotifyClient.Services.Request;
 
 namespace Tasprof.Components.SpotifyClient.Services.Token
 {
@@ -26,7 +27,7 @@ namespace Tasprof.Components.SpotifyClient.Services.Token
             return GlobalSettings.AuthToken;
         }
 
-        public async Task<string> GetNewAccessTokenAsync(IRequestService requestService)
+        public async Task<string> GetNewAccessTokenAsync(IHttpRequestService requestService)
         {
             GlobalSettings.AuthToken = string.Empty;
             var refresh_token = await _httpContextAccessor.HttpContext.GetTokenAsync("refresh_token");

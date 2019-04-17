@@ -15,6 +15,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Tasprof.Components.SpotifyChart" Version="1.0.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,6 +30,5 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Components\SpotifyService\SpotifyClient.csproj" />
-    <ProjectReference Include="..\..\Components\SpotifyChart\SpotifyChart.csproj" />
   </ItemGroup>
 </Project>

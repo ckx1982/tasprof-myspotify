@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
+using Tasprof.Components.MyUtilities.Services.HttpRequest;
 using Tasprof.Components.SpotifyClient.Constants;
 using Tasprof.Components.SpotifyClient.Models;
-using Tasprof.Components.SpotifyClient.Services.Request;
 
 namespace Tasprof.Components.SpotifyClient.Services.Identity
 {
     public class IdentityService : BaseService, IIdentityService
     {
-        private readonly IRequestService _requestProvider;
+        private readonly IHttpRequestService _requestProvider;
         private string _codeVerifier;
 
-        public IdentityService(IRequestService requestProvider, IGlobalSettings globalSettings)
+        public IdentityService(IHttpRequestService requestProvider, IGlobalSettings globalSettings)
         {
             _requestProvider = requestProvider;
             GlobalSettings = globalSettings;

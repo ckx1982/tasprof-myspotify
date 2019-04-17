@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using Tasprof.Components.MyUtilities.Services.HttpRequest;
 using Tasprof.Components.SpotifyClient.Constants;
 using Tasprof.Components.SpotifyClient.Models;
 using Tasprof.Components.SpotifyClient.Services.Request;
@@ -8,9 +9,9 @@ namespace Tasprof.Components.SpotifyClient.Services.Spotify
 {
     public class SpotifyService : ISpotifyService
     {
-        private readonly IRequestService _requestService;
+        private readonly IHttpRequestService _requestService;
 
-        public SpotifyService(IRequestService requestService)
+        public SpotifyService(IHttpRequestService requestService)
         {
             _requestService = requestService;
         }
