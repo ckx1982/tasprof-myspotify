@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.489
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28729.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7832C3A4-08CB-4F98-8CA4-71A8BA2A7A7D}"
 EndProject
@@ -24,15 +24,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MySpotify.WebMVC", "src\Web
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Components", "Components", "{BD29694D-85E2-4B66-9CF2-C0128F1FD486}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpotifyClient", "src\Components\SpotifyService\SpotifyClient.csproj", "{3AE41E1E-3435-481C-A6D8-1A902F0FCAA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpotifyClient", "src\Components\SpotifyService\SpotifyClient.csproj", "{3AE41E1E-3435-481C-A6D8-1A902F0FCAA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpotifyChart", "src\Components\SpotifyChart\SpotifyChart.csproj", "{1BCE0C60-9AAE-4350-8D86-342396BE6D57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpotifyChart", "src\Components\SpotifyChart\SpotifyChart.csproj", "{1BCE0C60-9AAE-4350-8D86-342396BE6D57}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{7B9DD0D4-0566-4D41-AFEC-3E64C45360F3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{5471862B-2986-4B72-BD8E-EEE3FC53EFAB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpotifyChart.WebAPI", "src\Components\SpotifyChart.WebAPI\SpotifyChart.WebAPI.csproj", "{9FAA853A-077F-489E-956D-BF32EF984CAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpotifyChart.WebAPI", "src\Components\SpotifyChart.WebAPI\SpotifyChart.WebAPI.csproj", "{9FAA853A-077F-489E-956D-BF32EF984CAE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -80,7 +80,7 @@ Global
 		{1BCE0C60-9AAE-4350-8D86-342396BE6D57} = {BD29694D-85E2-4B66-9CF2-C0128F1FD486}
 		{7B9DD0D4-0566-4D41-AFEC-3E64C45360F3} = {7832C3A4-08CB-4F98-8CA4-71A8BA2A7A7D}
 		{5471862B-2986-4B72-BD8E-EEE3FC53EFAB} = {7B9DD0D4-0566-4D41-AFEC-3E64C45360F3}
-		{9FAA853A-077F-489E-956D-BF32EF984CAE} = {5471862B-2986-4B72-BD8E-EEE3FC53EFAB}
+		{9FAA853A-077F-489E-956D-BF32EF984CAE} = {7B9DD0D4-0566-4D41-AFEC-3E64C45360F3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7AB604AB-D80F-4A60-8DA5-24312AD425B0}

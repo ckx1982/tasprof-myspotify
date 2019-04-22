@@ -261,3 +261,5 @@ __pycache__/
 *.pyc
 /src/Apps/MySpotify.Core/secrets.json
 /src/Components/SpotifyService/secrets.json
+/src/Apps/MySpotifyDroid
+/src/Components/SpotifyChart/Properties/PublishProfiles
