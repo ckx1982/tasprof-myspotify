@@ -12,9 +12,9 @@ using Tasprof.Components.SpotifyClient.Services.Request;
 using Tasprof.Components.SpotifyClient.Services.Spotify;
 using Tasprof.Components.SpotifyClient.Services.Identity;
 using Tasprof.Components.SpotifyClient.Services.Token;
-using Tasprof.Components.SpotifyClient.Services.SpotifyChart;
 using Tasprof.Components.MyUtilities.Services.HttpRequest;
 using Tasprof.Components.MyUtilities.Services.Token;
+using Tasprof.Components.SpotifyChart.Services;
 
 namespace Tasprof.Apps.MySpotify.WebMvc
 {
@@ -64,7 +64,8 @@ namespace Tasprof.Apps.MySpotify.WebMvc
             services.AddSingleton<IGlobalSettings, GlobalSettings>();
             services.AddScoped<ISpotifyClient, SpotifyClient>();
             services.AddScoped<ISpotifyService, SpotifyService>();
-            services.AddScoped<ISpotifyChartService, SpotifyChartService>();
+            services.AddScoped<ISpotifyChartExportService, SpotifyChartExportService>();
+            services.AddScoped<ISpotifyChartHelperService, SpotifyChartHelperService>();
             //services.AddScoped<ISpotifyService, SpotifyMockService>();
             services.AddScoped<IHttpRequestService, HttpRequestService>();
             services.AddScoped<IIdentityService, IdentityService>();

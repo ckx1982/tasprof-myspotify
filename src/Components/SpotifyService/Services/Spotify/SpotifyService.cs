@@ -2,8 +2,7 @@
 using System.Threading.Tasks;
 using Tasprof.Components.MyUtilities.Services.HttpRequest;
 using Tasprof.Components.SpotifyClient.Constants;
-using Tasprof.Components.SpotifyClient.Models;
-using Tasprof.Components.SpotifyClient.Services.Request;
+using Tasprof.Components.SpotifyModels;
 
 namespace Tasprof.Components.SpotifyClient.Services.Spotify
 {

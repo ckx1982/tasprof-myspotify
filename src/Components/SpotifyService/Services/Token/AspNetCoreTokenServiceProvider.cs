@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Tasprof.Components.MyUtilities.Services.HttpRequest;
 using Tasprof.Components.MyUtilities.Services.Token;
 using Tasprof.Components.SpotifyClient.Constants;
-using Tasprof.Components.SpotifyClient.Models;
+using Tasprof.Components.SpotifyModels;
 
 namespace Tasprof.Components.SpotifyClient.Services.Token
 {

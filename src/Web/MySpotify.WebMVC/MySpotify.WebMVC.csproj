@@ -24,11 +24,11 @@
     <Folder Include="Views\Playlists\" />
     <Folder Include="Controllers\Charts\" />
     <Folder Include="Views\Charts\" />
-    <Folder Include="ViewModels\" />
     <Folder Include="ViewModels\Charts\" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Components\SpotifyChart\SpotifyChart.csproj" />
     <ProjectReference Include="..\..\Components\SpotifyService\SpotifyClient.csproj" />
   </ItemGroup>
 </Project>

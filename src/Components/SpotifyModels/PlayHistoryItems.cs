@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 
-namespace Tasprof.Components.SpotifyClient.Models
+namespace Tasprof.Components.SpotifyModels
 {
     public class PlayHistoryItems
     {

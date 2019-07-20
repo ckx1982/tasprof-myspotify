@@ -17,7 +17,7 @@ namespace Tasprof.Apps.MySpotify.WebMvc.Services
 
         public async Task<SpotifyChart> CreateSpotifyChart(string playlistId)
         {
-            return await _httpRequestService.GetAsync<SpotifyChart>($"{EndPointUrl}{playlistId}");
+            return await _httpRequestService.GetAsync<SpotifyChart>($"{EndPointUrl}{ playlistId}");
         }
 
         public async Task<SpotifyChart> SaveSpotifyChart(SpotifyChart spotifyChart)

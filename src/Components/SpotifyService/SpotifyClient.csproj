@@ -15,12 +15,9 @@
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
     <PackageReference Include="Tasprof.Components.MyUtilities" Version="1.0.0" />
-    <PackageReference Include="Tasprof.Components.SpotifyChart" Version="1.0.1" />
-    <PackageReference Include="Xamarin.FFImageLoading" Version="2.4.4.859" />
-    <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.4.4.859" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Services\SpotifyChart\" />
+    <ProjectReference Include="..\SpotifyModels\SpotifyModels.csproj" />
   </ItemGroup>
 </Project>

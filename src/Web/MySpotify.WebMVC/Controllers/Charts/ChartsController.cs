@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Tasprof.Apps.MySpotify.WebMvc.ViewModels.Charts;
+using System;
+using System.IO;
+using System.Threading.Tasks;
+using Tasprof.Components.SpotifyChart.Services;
 using Tasprof.Components.SpotifyClient;
 
 namespace Tasprof.Apps.MySpotify.WebMvc.Controllers.Charts
@@ -12,28 +11,33 @@ namespace Tasprof.Apps.MySpotify.WebMvc.Controllers.Charts
     public class ChartsController : Controller
     {
         private readonly ISpotifyClient _spotifyClient;
+        private readonly ISpotifyChartExportService _spotifyChartExportService;
+        private readonly ISpotifyChartHelperService _spotifyChartHelperService;
 
-        public ChartsController(ISpotifyClient spotifyClient)
+        public ChartsController(ISpotifyClient spotifyClient, 
+                                ISpotifyChartExportService spotifyChartExportService,
+                                ISpotifyChartHelperService spotifyChartHelperService)
         {
             _spotifyClient = spotifyClient;
+            _spotifyChartExportService = spotifyChartExportService;
+            _spotifyChartHelperService = spotifyChartHelperService;
         }
 
         [Authorize]
-        public async Task<IActionResult> Create(string id)
+        public async Task<IActionResult> Export(string id)
         {
-            var spotifyChart = await _spotifyClient.SpotifyChartService.CreateChart(id);
-            return View(new CreateChartViewModel{ Chart = spotifyChart });
-        }
+            var playlistItems = await _spotifyClient.SpotifyService.GetPlaylistItems(id);
+            var spotifyChart = _spotifyChartHelperService.ConvertSpotifyPlaylistItemsToSpotifyChart(playlistItems);
+            var fileName = $@"C:\temp\export_{DateTime.Now.Ticks}.xlsx";
+            _spotifyChartExportService.ExportChart(spotifyChart, fileName);
 
-        [HttpPost]
-        public async Task<IActionResult> Create(CreateChartViewModel createChartViewModel)
-        {
-            if (ModelState.IsValid)
+            var memory = new MemoryStream();
+            using (var stream = new FileStream(fileName, FileMode.Open))
             {
-                await _spotifyClient.SpotifyChartService.CreateChart("");
-                RedirectToRoute("Playlists");
+                await stream.CopyToAsync(memory);
             }
-            return View(createChartViewModel);
+            memory.Position = 0;
+            return File(memory, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "export.xlsx");
         }
     }
 }

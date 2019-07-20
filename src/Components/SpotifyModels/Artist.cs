@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Newtonsoft.Json;
 
-namespace Tasprof.Components.SpotifyClient.Models
+namespace Tasprof.Components.SpotifyModels
 {
     public class Artist
     {

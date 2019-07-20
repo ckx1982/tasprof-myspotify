@@ -1,5 +1,4 @@
 ﻿using Tasprof.Components.SpotifyClient.Services.Spotify;
-using Tasprof.Components.SpotifyClient.Services.SpotifyChart;
 
 namespace Tasprof.Components.SpotifyClient
 {
@@ -7,14 +6,11 @@ namespace Tasprof.Components.SpotifyClient
     {
         private readonly IGlobalSettings _globalSettings;
         public ISpotifyService SpotifyService { get; }
-        public ISpotifyChartService SpotifyChartService { get;  }
 
-        public SpotifyClient(IGlobalSettings globalSettings, ISpotifyService spotifyService, ISpotifyChartService spotifyChartService)
+        public SpotifyClient(IGlobalSettings globalSettings, ISpotifyService spotifyService)
         {
             _globalSettings = globalSettings;
             SpotifyService = spotifyService;
-            SpotifyChartService = spotifyChartService;
-
         }
     }
 }

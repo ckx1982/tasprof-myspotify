@@ -1,13 +1,11 @@
-﻿@model List<Tasprof.Components.SpotifyClient.Models.Playlist>
-
-
+﻿@model List<Tasprof.Apps.MySpotify.WebMvc.ViewModels.Playlists.PlaylistViewModel>
 
 <div id="myspotify-playlist">
 @{
     foreach(var item in Model) {
         <div class="myspotify-playlist-item">
-            <a asp-controller="Charts" asp-action="Create" asp-route-id="@item.Id">
-                 <img alt="@item.Name" src="@item.MainImage.Url" />
+            <a asp-controller="Charts" asp-action="Export" asp-route-id="@item.Id">
+                 <img alt="@item.Name" src="@item.ImageUrl" />
             </a>
             <br />
             <label>@item.Name</label>

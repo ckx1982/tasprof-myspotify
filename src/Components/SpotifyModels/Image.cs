@@ -3,7 +3,7 @@ using FFImageLoading.Transformations;
 using System.Collections.Generic;
 using FFImageLoading.Work;
 
-namespace Tasprof.Components.SpotifyClient.Models
+namespace Tasprof.Components.SpotifyModels
 {
     public class Image
     {

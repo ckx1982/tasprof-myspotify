@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Tasprof.Components.SpotifyClient.Models
+namespace Tasprof.Components.SpotifyModels
 {
     public class Album
     {

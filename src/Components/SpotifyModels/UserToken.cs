@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Tasprof.Components.SpotifyClient.Models
+namespace Tasprof.Components.SpotifyModels
 {
     public class UserToken
     {

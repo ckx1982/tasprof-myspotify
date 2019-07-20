@@ -30,14 +30,6 @@ namespace Tasprof.Apps.MySpotify.WebMvc.Controllers
             return View();
         }
 
-        //[Authorize]
-        //public async Task<IActionResult> Chart(string id)
-        //{
-        //    var spotifyChart = await _spotifyClient.SpotifyChartService.CreateChart(id);
-        //    return View(spotifyChart);
-        //}
-
-
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

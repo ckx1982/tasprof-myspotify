@@ -1,0 +1,9 @@
+Feature: Spotify Playlist Export as Chart
+
+Use Case
+- Select a playlist to export
+- Click export button
+- Save playlist information into an excel file and force download
+
+
+

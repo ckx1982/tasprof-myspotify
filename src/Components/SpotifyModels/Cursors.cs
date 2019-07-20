@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Tasprof.Components.SpotifyClient.Models
+namespace Tasprof.Components.SpotifyModels
 {
     public class Cursors
     {

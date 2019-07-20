@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-using Tasprof.Components.SpotifyClient.Models;
+using Tasprof.Components.SpotifyModels;
 
 namespace Tasprof.Components.SpotifyClient.Services.Identity
 {

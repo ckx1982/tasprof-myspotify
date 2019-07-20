@@ -17,4 +17,12 @@
   <ItemGroup>
     <Folder Include="Models\" />
   </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NPOI" Version="2.4.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SpotifyModels\SpotifyModels.csproj" />
+  </ItemGroup>
 </Project>
