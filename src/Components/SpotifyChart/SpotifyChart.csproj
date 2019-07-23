@@ -15,10 +15,22 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
+    <None Remove="Mappings\SpotifyChart.hbm.xml" />
+    <None Remove="Mappings\SpotifyChartItem.hbm.xml" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Mappings\SpotifyChart.hbm.xml" />
+    <EmbeddedResource Include="Mappings\SpotifyChartItem.hbm.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="Repositories\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NHibernate" Version="5.2.5" />
     <PackageReference Include="NPOI" Version="2.4.1" />
   </ItemGroup>
 

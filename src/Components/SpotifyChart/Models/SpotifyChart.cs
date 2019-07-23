@@ -8,6 +8,6 @@ namespace Tasprof.Components.SpotifyChart.Models
         public int Id { get; set; }
         public DateTime Created { get; set; }
         public string Title { get; set; }
-        public IList<SpotifyChartItem> Items { get; set; }
+        public ICollection<SpotifyChartItem> Items { get; set; }
     }
 }

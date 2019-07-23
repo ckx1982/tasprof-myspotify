@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using Tasprof.Components.SpotifyChart.Services;
 
-namespace Tasprof.Components.SpotifyChart.Tests
+namespace Tasprof.Components.SpotifyChart.Tests.Services
 {
     [TestClass]
     public class SpotifyChartExportServiceTests

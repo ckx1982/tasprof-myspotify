@@ -4,7 +4,6 @@ namespace Tasprof.Components.SpotifyChart.Models
     public class SpotifyChartItem
     {
         public int Id { get; set; }
-        public int ChartId { get; set; }
         public string Artist { get; set; }
         public string Title { get; set; }
         public int Position { get; set; }

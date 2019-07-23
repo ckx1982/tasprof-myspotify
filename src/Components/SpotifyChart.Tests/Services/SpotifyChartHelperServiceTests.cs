@@ -4,7 +4,7 @@ using System.Linq;
 using Tasprof.Components.SpotifyChart.Services;
 using Tasprof.Components.SpotifyModels;
 
-namespace Tasprof.Components.SpotifyChart.Tests
+namespace Tasprof.Components.SpotifyChart.Tests.Services
 {
     [TestClass]
     public class SpotifyChartHelperServiceTests
