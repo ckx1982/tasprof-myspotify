@@ -39,6 +39,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpotifyChart.Tests", "src\C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpotifyModels", "src\Components\SpotifyModels\SpotifyModels.csproj", "{C7C4727D-81E0-4267-A6E1-53963AD7006A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpotifyChart.Core.Tests", "src\Components\SpotifyChart.Core.Tests\SpotifyChart.Core.Tests.csproj", "{93F053E4-A29C-42D9-B37A-55219FD76E68}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -78,6 +80,10 @@ Global
 		{C7C4727D-81E0-4267-A6E1-53963AD7006A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7C4727D-81E0-4267-A6E1-53963AD7006A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7C4727D-81E0-4267-A6E1-53963AD7006A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93F053E4-A29C-42D9-B37A-55219FD76E68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93F053E4-A29C-42D9-B37A-55219FD76E68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93F053E4-A29C-42D9-B37A-55219FD76E68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93F053E4-A29C-42D9-B37A-55219FD76E68}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -97,6 +103,7 @@ Global
 		{9FAA853A-077F-489E-956D-BF32EF984CAE} = {7B9DD0D4-0566-4D41-AFEC-3E64C45360F3}
 		{CFCB1572-0D01-4268-9C9A-EFCBD50BAF59} = {BD29694D-85E2-4B66-9CF2-C0128F1FD486}
 		{C7C4727D-81E0-4267-A6E1-53963AD7006A} = {BD29694D-85E2-4B66-9CF2-C0128F1FD486}
+		{93F053E4-A29C-42D9-B37A-55219FD76E68} = {BD29694D-85E2-4B66-9CF2-C0128F1FD486}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7AB604AB-D80F-4A60-8DA5-24312AD425B0}
