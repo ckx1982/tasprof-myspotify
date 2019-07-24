@@ -5,9 +5,9 @@ namespace Tasprof.Components.SpotifyChart.Models
 {
     public class SpotifyChart
     {
-        public int Id { get; set; }
-        public DateTime Created { get; set; }
-        public string Title { get; set; }
-        public ICollection<SpotifyChartItem> Items { get; set; }
+        public virtual int Id { get; set; }
+        public virtual DateTime Created { get; set; }
+        public virtual string Title { get; set; }
+        public virtual ICollection<SpotifyChartItem> Items { get; set; }
     }
 }

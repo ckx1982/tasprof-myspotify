@@ -20,9 +20,11 @@ namespace Tasprof.Components.SpotifyChart.Core.Tests
             configuration.SetProperty(Environment.ReleaseConnections, "on_close");
             configuration.SetProperty(Environment.ShowSql, "true");
             configuration.SetProperty(Environment.Dialect, typeof(SQLiteDialect).AssemblyQualifiedName);
-            configuration.SetProperty(Environment.ConnectionString, ":memory:");
-            configuration.AddFile("../SpotifyChart/Mappings.SpotifyChart.hbm.xml");
-            configuration.AddFile("../SpotifyChart/Mappings.SpotifyChartItem.hbm.xml");
+            configuration.SetProperty(Environment.ConnectionString, "Data Source=:memory:;Version=3;New=True;");
+            configuration.AddFile("../../../../SpotifyChart/Mappings/SpotifyChart.hbm.xml");
+            configuration.AddFile("../../../../SpotifyChart/Mappings/SpotifyChartItem.hbm.xml");
+
+            sessionFactory = configuration.BuildSessionFactory();
             Session = sessionFactory.OpenSession();
             new SchemaExport(configuration).Execute(true, true, false, Session.Connection, Console.Out);
         }

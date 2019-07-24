@@ -2,6 +2,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NHibernate;
 using NHibernate.Cfg;
 using NHibernate.Tool.hbm2ddl;
+using System;
 
 namespace Tasprof.Components.SpotifyChart.Core.Tests
 {
@@ -11,7 +12,7 @@ namespace Tasprof.Components.SpotifyChart.Core.Tests
         private InMemoryDatabase database;
         private ISession session;
 
-        [ClassInitialize]
+        [TestInitialize]
         public void SetupDatabase()
         {
             database = new InMemoryDatabase();
@@ -36,7 +37,8 @@ namespace Tasprof.Components.SpotifyChart.Core.Tests
             {
                 id = session.Save(new SpotifyChart.Models.SpotifyChart
                 {
-                    Title = "My first Chart"
+                    Title = "My first Chart",
+                    Created = DateTime.Today
                   
                 });
                 transaction.Commit();
@@ -48,9 +50,9 @@ namespace Tasprof.Components.SpotifyChart.Core.Tests
             {
                 //var chart = session.Get<SpotifyChart.Models.SpotifyChart>(id);
                 //Assert.AreEqual("My first Chart", chart.Title);
-                var query = session.CreateSQLQuery("select * from charts where id = :id");
+                var query = session.CreateSQLQuery("select * from charts where id = :id and created = :created");
                 query.SetParameter("id", id);
-
+                query.SetParameter("created", DateTime.Today);
                 var result = query.List();
                 transaction.Commit();
             }
