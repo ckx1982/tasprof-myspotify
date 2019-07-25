@@ -34,8 +34,8 @@ namespace Tasprof.Components.SpotifyChart.Services
                 {
                     IRow row = sheet.CreateRow(spotifyChartItem.Position);
                     row.CreateCell(0).SetCellValue(spotifyChartItem.Position);
-                    row.CreateCell(1).SetCellValue(spotifyChartItem.Artist);
-                    row.CreateCell(2).SetCellValue(spotifyChartItem.Title);
+                    row.CreateCell(1).SetCellValue(spotifyChartItem.ChartTrack.Artist);
+                    row.CreateCell(2).SetCellValue(spotifyChartItem.ChartTrack.Title);
                 }
 
                 workbook.Write(fs);

@@ -23,10 +23,11 @@ namespace Tasprof.Components.SpotifyChart.Core.Tests
             configuration.SetProperty(Environment.ConnectionString, "Data Source=:memory:;Version=3;New=True;");
             configuration.AddFile("../../../../SpotifyChart/Mappings/SpotifyChart.hbm.xml");
             configuration.AddFile("../../../../SpotifyChart/Mappings/SpotifyChartItem.hbm.xml");
+            configuration.AddFile("../../../../SpotifyChart/Mappings/SpotifyChartTrack.hbm.xml");
 
             sessionFactory = configuration.BuildSessionFactory();
             Session = sessionFactory.OpenSession();
-            new SchemaExport(configuration).Execute(true, true, false, Session.Connection, Console.Out);
+            new SchemaExport(configuration).Execute(false, true, false, Session.Connection, Console.Out);
         }
 
         public void Dispose()

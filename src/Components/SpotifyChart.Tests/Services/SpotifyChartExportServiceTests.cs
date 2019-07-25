@@ -8,7 +8,6 @@ namespace Tasprof.Components.SpotifyChart.Tests.Services
     [TestClass]
     public class SpotifyChartExportServiceTests
     {
-
         public TestContext TestContext { get; set; }
 
         [TestMethod]
@@ -22,14 +21,20 @@ namespace Tasprof.Components.SpotifyChart.Tests.Services
                     new Models.SpotifyChartItem
                     {
                         Position = 1,
-                        Artist = "Artist 1",
-                        Title = "Title 1",
+                        ChartTrack = new Models.SpotifyChartTrack
+                        {
+                            Artist = "Artist 1",
+                            Title = "Title 1"
+                        },
                     },
                     new Models.SpotifyChartItem
                     {
                         Position = 2,
-                        Artist = "Artist 2",
-                        Title = "Title 2",
+                         ChartTrack = new Models.SpotifyChartTrack
+                         {
+                            Artist = "Artist 2",
+                            Title = "Title 2"
+                         }
                     }
                 }
             };

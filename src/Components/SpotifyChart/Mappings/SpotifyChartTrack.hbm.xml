@@ -2,15 +2,15 @@
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
                    assembly="Tasprof.Components.SpotifyChart"
                    namespace="Tasprof.Components.SpotifyChart.Models">
-  <class name="SpotifyChart" table="charts">
+  <class name="SpotifyChartTrack" table="tracks">
     <id name="Id" generator="native" />
-    <property name="ValidFrom" />
-    <property name="ValidUntil" />
+    <property name="Artist" />
+    <property name="Title" />
     <property name="Created" />
     <property name="Updated" />
-    <set name="Items" cascade="all-delete-orphan">
-      <key column="ChartId" />
-      <one-to-many class="SpotifyChartItem"/>
+    <set name="ChartItems" cascade="save-update">
+      <key column="TrackId" />
+      <one-to-many class="SpotifyChartItem" />
     </set>
   </class>
 </hibernate-mapping>

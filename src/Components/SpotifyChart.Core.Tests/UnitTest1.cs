@@ -28,19 +28,13 @@ namespace Tasprof.Components.SpotifyChart.Core.Tests
             new SchemaExport(cfg).Execute(true, true, false);
         }
 
-
         [TestMethod]
         public void TestMethod2()
         {
             object id;
             using(var transaction = session.BeginTransaction())
             {
-                id = session.Save(new SpotifyChart.Models.SpotifyChart
-                {
-                    Title = "My first Chart",
-                    Created = DateTime.Today
-                  
-                });
+                id = session.Save(new SpotifyChart.Models.SpotifyChart());
                 transaction.Commit();
             }
 
@@ -57,6 +51,5 @@ namespace Tasprof.Components.SpotifyChart.Core.Tests
                 transaction.Commit();
             }
         }
-
     }
 }

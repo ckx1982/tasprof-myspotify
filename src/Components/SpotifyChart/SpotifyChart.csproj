@@ -17,16 +17,13 @@
   <ItemGroup>
     <None Remove="Mappings\SpotifyChart.hbm.xml" />
     <None Remove="Mappings\SpotifyChartItem.hbm.xml" />
+    <None Remove="Mappings\SpotifyChartTrack.hbm.xml" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Mappings\SpotifyChart.hbm.xml" />
     <EmbeddedResource Include="Mappings\SpotifyChartItem.hbm.xml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="Repositories\" />
+    <EmbeddedResource Include="Mappings\SpotifyChartTrack.hbm.xml" />
   </ItemGroup>
 
   <ItemGroup>

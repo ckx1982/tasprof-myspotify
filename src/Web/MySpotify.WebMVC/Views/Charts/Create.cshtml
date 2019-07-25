@@ -2,14 +2,12 @@
 @model Tasprof.Apps.MySpotify.WebMvc.ViewModels.Charts.CreateChartViewModel
 
 <div id="myspotitfy-chart-container">
-    <input type="text" value="@Model.Chart.Title" />
-   
     <ul id="myspotitfy-chart">
         @foreach(var item in Model.Chart.Items) {
         <li class="myspotify-chartitem">
             <span>@item.Position</span>
-            <span>@item.Artist</span>
-            <span>@item.Title</span>
+            <span>@item.ChartTrack.Artist</span>
+            <span>@item.ChartTrack.Title</span>
         </li>
         }
     </ul>

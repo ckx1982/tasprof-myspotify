@@ -26,10 +26,14 @@ namespace Tasprof.Components.SpotifyChart.Services
             {
                 var spotifyChartItem = new Models.SpotifyChartItem
                 {
-                    Artist = playlistItem.Track.MainArtist.Name,
                     Position = count,
-                    Title = playlistItem.Track.Title,
-                    Chart = spotifyChart
+                    Chart = spotifyChart,
+                    ChartTrack = new Models.SpotifyChartTrack
+                    {
+                        Artist = playlistItem.Track.MainArtist.Name,
+                        Title = playlistItem.Track.Title
+                    }
+                    
                 };
                 spotifyChart.Items.Add(spotifyChartItem);
                 count++;

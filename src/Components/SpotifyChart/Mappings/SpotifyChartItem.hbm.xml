@@ -3,12 +3,11 @@
                    assembly="Tasprof.Components.SpotifyChart"
                    namespace="Tasprof.Components.SpotifyChart.Models">
   <class name="SpotifyChartItem" table="chartitems">
-    <id name="Id" generator="hilo" />
-    <property name="Artist" />
-    <property name="Title" />
+    <id name="Id" generator="native" />
     <property name="Position" />
     <property name="Created" />
     <property name="Updated" />
     <many-to-one name="Chart" class="SpotifyChart" column="ChartId" />
+    <many-to-one name="ChartTrack" class="SpotifyChartTrack" column="TrackId" cascade="save-update" />
   </class>
 </hibernate-mapping>
