@@ -4,13 +4,13 @@
                    namespace="Tasprof.Components.SpotifyChart.Models">
   <class name="SpotifyChartTrack" table="tracks">
     <id name="Id" generator="native" />
-    <property name="Artist" />
-    <property name="Title" />
+    <property name="Artist" unique-key="ArtistTitle" />
+    <property name="Title" unique-key="ArtistTitle" />
     <property name="Created" />
     <property name="Updated" />
-    <set name="ChartItems" cascade="save-update">
+    <bag name="ChartItems" cascade="save-update">
       <key column="TrackId" />
       <one-to-many class="SpotifyChartItem" />
-    </set>
+    </bag>
   </class>
 </hibernate-mapping>

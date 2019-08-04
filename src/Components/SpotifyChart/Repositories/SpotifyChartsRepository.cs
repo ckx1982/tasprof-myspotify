@@ -1,6 +1,7 @@
 ﻿using NHibernate;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Tasprof.Components.SpotifyChart.Models;
 
@@ -16,34 +17,33 @@ namespace Tasprof.Components.SpotifyChart.Repositories
             this.session = session;
         }
 
-        public Models.SpotifyChart Add(Models.SpotifyChart chart)
-        {
-            throw new NotImplementedException();
-        }
 
-        public void Delete(Models.SpotifyChart chart)
+        public IQueryable<Models.SpotifyChart> Get()
         {
-            throw new NotImplementedException();
-        }
-
-        public IList<Models.SpotifyChart> Get()
-        {
-            throw new NotImplementedException();
+           return session.Query<Models.SpotifyChart>();
         }
 
         public Models.SpotifyChart Get(int id)
         {
-            throw new NotImplementedException();
+            return session.Get<Models.SpotifyChart>(id);
         }
 
-        public void Save()
+
+        public Models.SpotifyChart Insert(Models.SpotifyChart chart)
         {
-            throw new NotImplementedException();
+            session.Save(chart);
+            return chart;
         }
 
         public void Update(Models.SpotifyChart chart)
         {
-            throw new NotImplementedException();
+            session.Update(chart);
         }
+
+        public void Delete(Models.SpotifyChart chart)
+        {
+            session.Delete(chart);
+        }
+
     }
 }

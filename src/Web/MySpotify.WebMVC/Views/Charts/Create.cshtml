@@ -3,7 +3,7 @@
 
 <div id="myspotitfy-chart-container">
     <ul id="myspotitfy-chart">
-        @foreach(var item in Model.Chart.Items) {
+        @foreach(var item in Model.Chart.ChartItems) {
         <li class="myspotify-chartitem">
             <span>@item.Position</span>
             <span>@item.ChartTrack.Artist</span>

@@ -1,17 +1,13 @@
 ﻿using NPOI.SS.UserModel;
 using NPOI.XSSF.UserModel;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
-using Tasprof.Components.SpotifyChart.Models;
 
 namespace Tasprof.Components.SpotifyChart.Services
 {
     /// <summary>
     /// Default file export service to Excel
     /// </summary>
-    public class SpotifyChartExportService : ISpotifyChartExportService
+    public class SpotifyChartExcelExportService : ISpotifyChartExportService
     {
         /// <summary>
         /// Export chart to excel file
@@ -30,7 +26,7 @@ namespace Tasprof.Components.SpotifyChart.Services
                 headerRow.CreateCell(1).SetCellValue("Artist");
                 headerRow.CreateCell(2).SetCellValue("Title");
 
-                foreach (var spotifyChartItem in spotifyChart.Items)
+                foreach (var spotifyChartItem in spotifyChart.ChartItems)
                 {
                     IRow row = sheet.CreateRow(spotifyChartItem.Position);
                     row.CreateCell(0).SetCellValue(spotifyChartItem.Position);

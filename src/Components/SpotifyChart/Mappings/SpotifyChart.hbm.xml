@@ -8,9 +8,9 @@
     <property name="ValidUntil" />
     <property name="Created" />
     <property name="Updated" />
-    <set name="Items" cascade="all-delete-orphan">
+    <bag name="ChartItems" table="chartitems" cascade="all-delete-orphan">
       <key column="ChartId" />
       <one-to-many class="SpotifyChartItem"/>
-    </set>
+    </bag>
   </class>
 </hibernate-mapping>

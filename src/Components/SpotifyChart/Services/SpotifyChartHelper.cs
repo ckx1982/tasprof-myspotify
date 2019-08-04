@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using Tasprof.Components.SpotifyChart.Models;
+﻿using System.Collections.Generic;
 using Tasprof.Components.SpotifyModels;
 
 namespace Tasprof.Components.SpotifyChart.Services
 {
-    public class SpotifyChartHelperService : ISpotifyChartHelperService
+    public class SpotifyChartHelper
     {
-        public Models.SpotifyChart ConvertSpotifyPlaylistItemsToSpotifyChart(PlaylistItems playlistItems)
+        public static Models.SpotifyChart ConvertSpotifyPlaylistItemsToSpotifyChart(PlaylistItems playlistItems)
         {
             if (playlistItems == null || playlistItems.Items == null || playlistItems.Items.Count == 0)
             {
@@ -17,10 +15,10 @@ namespace Tasprof.Components.SpotifyChart.Services
             return ConvertSpotifyPlaylistItemsToSpotifyChart(playlistItems.Items);
         }
 
-        public Models.SpotifyChart ConvertSpotifyPlaylistItemsToSpotifyChart(IList<PlaylistItem> playlistItems)
+        public static Models.SpotifyChart ConvertSpotifyPlaylistItemsToSpotifyChart(IList<PlaylistItem> playlistItems)
         {
             var spotifyChart = new Models.SpotifyChart();
-            spotifyChart.Items = new List<Models.SpotifyChartItem>();
+            spotifyChart.ChartItems = new List<Models.SpotifyChartItem>();
             var count = 1;
             foreach (var playlistItem in playlistItems)
             {
@@ -35,7 +33,7 @@ namespace Tasprof.Components.SpotifyChart.Services
                     }
                     
                 };
-                spotifyChart.Items.Add(spotifyChartItem);
+                spotifyChart.ChartItems.Add(spotifyChartItem);
                 count++;
             }
             return spotifyChart;

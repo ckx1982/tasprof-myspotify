@@ -16,7 +16,7 @@ namespace Tasprof.Components.SpotifyChart.Tests.Services
             // Arrange
             var spotifyChart = new Models.SpotifyChart
             {
-                Items = new List<Models.SpotifyChartItem>
+                ChartItems = new List<Models.SpotifyChartItem>
                 {
                     new Models.SpotifyChartItem
                     {
@@ -39,7 +39,7 @@ namespace Tasprof.Components.SpotifyChart.Tests.Services
                 }
             };
 
-            ISpotifyChartExportService spotifyChartExportService = new SpotifyChartExportService();
+            ISpotifyChartExportService spotifyChartExportService = new SpotifyChartExcelExportService();
 
             // Act
             spotifyChartExportService.ExportChart(spotifyChart, Path.Combine(TestContext.TestDeploymentDir, "export.xlsx"));

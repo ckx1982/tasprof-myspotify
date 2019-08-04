@@ -64,8 +64,7 @@ namespace Tasprof.Apps.MySpotify.WebMvc
             services.AddSingleton<IGlobalSettings, GlobalSettings>();
             services.AddScoped<ISpotifyClient, SpotifyClient>();
             services.AddScoped<ISpotifyService, SpotifyService>();
-            services.AddScoped<ISpotifyChartExportService, SpotifyChartExportService>();
-            services.AddScoped<ISpotifyChartHelperService, SpotifyChartHelperService>();
+            services.AddScoped<ISpotifyChartExportService, SpotifyChartExcelExportService>();
             //services.AddScoped<ISpotifyService, SpotifyMockService>();
             services.AddScoped<IHttpRequestService, HttpRequestService>();
             services.AddScoped<IIdentityService, IdentityService>();

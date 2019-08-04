@@ -72,9 +72,9 @@ namespace Tasprof.Components.SpotifyChart.Tests.Services
 
             // Assert
             Assert.IsNotNull(spotifyChart);
-            Assert.AreEqual(2, spotifyChart.Items.Count());
-            Assert.AreEqual(1, spotifyChart.Items.First().Position);
-            Assert.AreEqual(2, spotifyChart.Items.Last().Position);
+            Assert.AreEqual(2, spotifyChart.ChartItems.Count());
+            Assert.AreEqual(1, spotifyChart.ChartItems.First().Position);
+            Assert.AreEqual(2, spotifyChart.ChartItems.Last().Position);
         }
     }
 }

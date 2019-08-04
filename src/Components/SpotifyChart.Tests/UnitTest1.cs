@@ -9,6 +9,18 @@ namespace Tasprof.Components.SpotifyChart.Tests
     [TestClass]
     public class UnitTest1
     {
+        [ClassInitialize]
+        public static void TestStart(TestContext testContext)
+        {
+
+        }
+
+        [ClassCleanup]
+        public static void TestEnd(TestContext testContext)
+        {
+
+        }
+
         [TestMethod]
         public void TestMethod1()
         {
@@ -20,28 +32,36 @@ namespace Tasprof.Components.SpotifyChart.Tests
             var sessionFactory = cfg.BuildSessionFactory();
             var session = sessionFactory.OpenSession();
 
+            object id;
             using (var transaction = session.BeginTransaction())
             {
 
-                var id = session.Save(
-                    new Models.SpotifyChart
-                    {
-                        ValidFrom = DateTime.Today,
-                        ValidUntil = DateTime.Today.AddDays(7),
-                        Items = new List<Models.SpotifyChartItem>
-                        {
-                           new Models.SpotifyChartItem
-                           {
-                               Position = 1,
-                               ChartTrack = new Models.SpotifyChartTrack
-                               {
-                                   Artist = "Prince",
-                                   Title = "1999"
-                               }
-                           }
-                        }
-                    }
-                );
+                var track = new Models.SpotifyChartTrack
+                {
+                    Artist = "Prince",
+                    Title = "1999"
+                };
+
+                var trackid = session.Save(track);
+
+                var chart = new Models.SpotifyChart
+                {
+                    ValidFrom = DateTime.Today,
+                    ValidUntil = DateTime.Today.AddDays(7),
+                };
+
+                chart.AddChartTrack(track);
+
+
+                id = session.Save(chart);
+                    
+                transaction.Commit();
+            }
+
+            using (var transaction = session.BeginTransaction())
+            {
+
+                var chart = session.Get<Models.SpotifyChart>(id);
 
                 transaction.Commit();
             }
